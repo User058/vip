@@ -527,7 +527,8 @@ sts="${Info}"
 else
 sts="${Error}"
 fi
-function enabletorrent () {
+
+function enabletorrent() {
 [[ ! -f /etc/ontorrent ]] && {
 sudo iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 sudo iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
