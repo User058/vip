@@ -927,44 +927,6 @@ echo "$name" > /etc/profil
 read -n 1 -s -r -p " Success Change Press Any key to Back Menu"
 menu
 }
-function enabletorrent() {
-[[ ! -f /etc/ontorrent ]] && {
-sudo iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
-sudo iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
-sudo iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "BitTorrent" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "peer_id=" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string ".torrent" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "torrent" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "announce" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "info_hash" -j DROP
-sudo iptables-save > /etc/iptables.up.rules
-sudo iptables-restore -t < /etc/iptables.up.rules
-sudo netfilter-persistent save >/dev/null 2>&1  
-sudo netfilter-persistent reload >/dev/null 2>&1 
-touch /etc/ontorrent
-menu-set
-} || {
-sudo iptables -D FORWARD -m string --string "get_peers" --algo bm -j DROP
-sudo iptables -D FORWARD -m string --string "announce_peer" --algo bm -j DROP
-sudo iptables -D FORWARD -m string --string "find_node" --algo bm -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "BitTorrent" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "peer_id=" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string ".torrent" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "torrent" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "announce" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "info_hash" -j DROP
-sudo iptables-save > /etc/iptables.up.rules
-sudo iptables-restore -t < /etc/iptables.up.rules
-sudo netfilter-persistent save >/dev/null 2>&1
-sudo netfilter-persistent reload >/dev/null 2>&1 
-rm -f /etc/ontorrent
-menu-set
-}
 clear
 echo -e " $COLOR1╔══════════════════════════════════════════════════════╗${NC}"
 echo -e " $COLOR1║${NC}${COLBG1}                 ${WH}• SYSTEM MENU •                      ${NC}$COLOR1║ $NC"
@@ -979,8 +941,7 @@ echo -e " $COLOR1║${NC} ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}INSTALL
 echo -e " $COLOR1║${NC} ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}CHANGE COLOR THEME${WH}  ${WH}[${COLOR1}15${WH}]${NC} ${COLOR1}• ${WH}BOT DO MENU ${WH}            $COLOR1║ $NC"
 echo -e " $COLOR1║${NC} ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}LIMIT SPEED${WH}         ${WH}[${COLOR1}16${WH}]${NC} ${COLOR1}• ${WH}CANGE CLIENTS NAME${WH}      $COLOR1║ $NC"
 echo -e " $COLOR1║${NC} ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK $NC            ${WH}[${COLOR1}99${WH}]${NC} ${COLOR1}• ${WH}CLEAR RAM CACHE ${WH}        $COLOR1║ $NC"
-echo -e " $COLOR1║${NC} ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK $NC            ${WH}[${COLOR1}17${WH}]${NC} ${COLOR1}• ${WH}Antitorrent NAME${WH}      $COLOR1║ $NC"
-echo -e " $COLOR1╚═══════════════════════════════════════════════════════════╝${NC}"		
+echo -e " $COLOR1╚═══════════════════════════════════════════════════════════╝${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
 case $opt in
@@ -1000,7 +961,7 @@ case $opt in
 14 |14) clear ; coremenu ; exit ;;
 15 |15) clear ; dobot ; exit ;;
 16 |16) clear ; nameauthor ; exit ;;
-17 |17) clear ; enabletorrent ; exit ;;
 99 |99) clear ; clearcache ; exit ;;
+00 |0) clear ; menu ; exit ;;
 *) echo -e "" ; echo "Please Select An Option " ; sleep 1 ; m-system ;;
 esac
