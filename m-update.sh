@@ -10,7 +10,7 @@ COLBG1="$(cat /etc/rmbl/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g
 WH='\033[1;37m'
 ###########- END COLOR CODE -##########
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}                 ${WH}⇱ UPDATE ⇲                    ${NC} $COLOR1 $NC"
+echo -e "$COLOR1 ${NC} ${COLBG1}                 ${WH}⇱ UPDATING ⇲                    ${NC} $COLOR1 $NC"
 echo -e "$COLOR1 ${NC} ${COLBG1}             ${WH}⇱ LATEST SCRIPT ⇲                ${NC} $COLOR1 $NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 
@@ -147,7 +147,7 @@ wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/User058/vip/m
 wget -q -O /usr/bin/trialssh "https://raw.githubusercontent.com/User058/vip/main/updt/trialssh.sh" && chmod +x /usr/bin/trialssh
 wget -q -O /usr/bin/autocpu "https://raw.githubusercontent.com/User058/vip/main/updt/install/autocpu.sh" && chmod +x /usr/bin/autocpu
 wget -q -O /usr/bin/bantwidth "https://raw.githubusercontent.com/User058/vip/main/updt/bantwidth.sh" && chmod +x /usr/bin/bantwidth
-wget -q -O /usr/bin/bantwidth "https://raw.githubusercontent.com/User058/vip/main/updt/cekvless.sh" && chmod +x /usr/bin/cekvless
+wget -q -O /usr/bin/cekvless "https://raw.githubusercontent.com/User058/vip/main/updt/cekvless.sh" && chmod +x /usr/bin/cekvless
 chmod +x menu
 chmod +x m-vmess
 chmod +x m-vless
