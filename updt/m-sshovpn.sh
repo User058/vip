@@ -1181,7 +1181,7 @@ echo -e " $COLOR1╭════════════════════
 echo -e " $COLOR1│${NC} ${COLBG1}            ${WH}• SSH PANEL MENU •                    ${NC} $COLOR1│ $NC"
 echo -e " $COLOR1╰════════════════════════════════════════════════════╯${NC}"
 echo -e " $COLOR1╭═════════════════════════════════════════════════════════╮${NC}"
-echo -e " $COLOR1│ $NC  ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD USER${NC}        ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}CHECK USER ONLINE${NC}       $COLOR1│ $NC"
+echo -e " $COLOR1│ $NC  ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD USER${NC}        ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}CHECK USERS ONLINE${NC}      $COLOR1│ $NC"
 echo -e " $COLOR1│ $NC  ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}TRIAL USER${NC}      ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}CHECK USER CONFIG${NC}       $COLOR1│ $NC"
 echo -e " $COLOR1│ $NC  ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}RENEW USER${NC}      ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}CHANGE IP LIMIT${NC}         $COLOR1│ $NC"
 echo -e " $COLOR1│ $NC  ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}DELETE USER${NC}     ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}LOCK USER LOGIN${NC}         $COLOR1│ $NC"
