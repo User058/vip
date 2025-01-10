@@ -146,8 +146,8 @@ wget -q -O /usr/bin/trialvless "https://raw.githubusercontent.com/User058/vip/ma
 wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/User058/vip/main/updt/trialvless.sh" && chmod +x /usr/bin/trialvless
 wget -q -O /usr/bin/trialssh "https://raw.githubusercontent.com/User058/vip/main/updt/trialssh.sh" && chmod +x /usr/bin/trialssh
 wget -q -O /usr/bin/autocpu "https://raw.githubusercontent.com/User058/vip/main/updt/install/autocpu.sh" && chmod +x /usr/bin/autocpu
-wget -q -O /usr/bin/bantwidth "https://raw.githubusercontent.com/User058/vip/main/updt/bantwidth" && chmod +x /usr/bin/bantwidth
-wget -q -O /usr/bin/bantwidth "https://raw.githubusercontent.com/User058/vip/main/updt/cekvless" && chmod +x /usr/bin/cekvless
+wget -q -O /usr/bin/bantwidth "https://raw.githubusercontent.com/User058/vip/main/updt/bantwidth.sh" && chmod +x /usr/bin/bantwidth
+wget -q -O /usr/bin/bantwidth "https://raw.githubusercontent.com/User058/vip/main/updt/cekvless.sh" && chmod +x /usr/bin/cekvless
 chmod +x menu
 chmod +x m-vmess
 chmod +x m-vless
