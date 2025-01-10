@@ -180,7 +180,7 @@ clear
 
 }
 echo -e ""
-echo -e "  \033[1;91m Update Script...\033[1;37m"
+echo -e "  \033[1;91m Updating Script...\033[1;37m"
 fun_bar 'res1'
 
 echo -e ""
