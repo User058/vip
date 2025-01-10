@@ -9,7 +9,7 @@ WH='\033[1;37m'
 ipsaya=$(wget -qO- ifconfig.me)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/User058/vip/main/ip"
+data_ip="https://raw.githubUSERcontent.com/USER058/vip/main/ip"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -40,7 +40,7 @@ sleep 1
 echo -e "${COLOR1}[ INFO ] ${WH}Processing... "
 mkdir -p /root/backup
 echo -e "${COLOR1}[ INFO ] ${WH}Mohon Ditunggu... "
-wget -O /root/backup/ipmini https://raw.githubusercontent.com/User058/vip/main/ip &> /dev/null
+wget -O /root/backup/ipmini https://raw.githubUSERcontent.com/USER058/vip/main/ip &> /dev/null
 cp -r /etc/passwd /root/backup/ &> /dev/null
 cp -r /etc/group /root/backup/ &> /dev/null
 cp -r /etc/shadow /root/backup/ &> /dev/null
@@ -73,8 +73,8 @@ Date   : $date
 Time   : $time WIB
 Link Google : $link" https://api.telegram.org/bot$token/sendDocument &> /dev/null
 rm -fr /root/backup &> /dev/null
-rm -fr /root/user-backup &> /dev/null
-rm -f /root/$NameUser.zip &> /dev/null
+rm -fr /root/USER-backup &> /dev/null
+rm -f /root/$NameUSER.zip &> /dev/null
 rm -r /root/$IP-$date.zip &> /dev/null
 rm -f /root/$IP.zip &> /dev/null
 echo " Please Check Your BOT"

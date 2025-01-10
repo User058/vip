@@ -10,7 +10,7 @@ WH='\033[1;37m'
 ipsaya=$(wget -qO- ifconfig.me)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/User058/vip/main/ip"
+data_ip="https://raw.githubUSERcontent.com/USER058/vip/main/ip"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -175,10 +175,10 @@ rm -rf /etc/cron.d/bckp_otm2
 rm -rf /etc/jam
 echo -e ""
 echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 Silahkan Tulis Jamnya contoh : 2 Jam Tulis 2. dst.${NC}"
+echo -e "$COLOR1 Please write the hour for example : 2 Hours 2. Minutes.${NC}"
 echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo -e " "
-read -p "   Silahkan tulis jam auto backup nya : " jam2
+read -p "   Please write the auto backup time : " jam2
 echo "$jam2" > /etc/jam2
 echo ""
 clear
@@ -190,7 +190,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 END
 service cron restart >/dev/null 2>&1
 service cron reload >/dev/null 2>&1
-echo -e "${BIGreen}Auto Backup Tiap ${jam2} JAM ${NC} "
+echo -e "${BIGreen}Auto Backup Every ${jam2} JAM ${NC} "
 echo -e ""
 }
 function jam(){
@@ -204,7 +204,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 Contoh Format Jam : 4 = jam 4 pagi, 20 = jam 8 malam ${NC}"
 echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo -e " "
-read -p "   Silahkan tulis jam auto backup nya : " jam
+read -p "   Please write down the auto backup time : " jam
 echo "$jam" > /etc/jam
 echo ""
 clear
@@ -224,7 +224,7 @@ function autobckpbot(){
 clear
 echo ""
 echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│        ${WH}Please select a your Choice       $COLOR1│${NC}"
+echo -e "$COLOR1│        ${WH}Please selectbyour Choice       $COLOR1│${NC}"
 echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│           [ 1 ]  ${WH}OFF AUTO BACKUP         $COLOR1│${NC}"
@@ -272,7 +272,7 @@ echo -e ""
 echo -e "$COLOR1 [ INFO ] ${WH}Create for database Backup Telegram"
 read -rp "Enter Token (Creat on @BotFather) : " -e token2
 echo "$token2" > /usr/bin/token
-read -rp "Enter Your Id (Creat on @userinfobot)  : " -e idchat
+read -rp "Enter Your Id (Creat on @USERinfobot)  : " -e idchat
 echo "$idchat" > /usr/bin/idchat
 sleep 1
 bottelegram

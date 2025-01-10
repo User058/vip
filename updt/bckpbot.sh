@@ -13,7 +13,7 @@ WH='\033[1;37m'
 ipsaya=$(curl -sS ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/User058/vip/main/ip"
+data_ip="https://raw.githubUSERcontent.com/USER058/vip/main/ip"
 checking_sc() {
     useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
     if [[ $date_list < $useexp ]]; then
@@ -39,8 +39,8 @@ echo -e "${tyblue}┌───────────────────�
 echo -e "${tyblue}         Please select a Bot type below                 ${NC}"
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 echo -e "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e "${tyblue}           [ 1 ]  Buat Database BOT                       ${NC}"
-echo -e "${tyblue}           [ 2 ]  Tidak buat database BOT                   ${NC}"
+echo -e "${tyblue}           [ 1 ]  Create a BOT Database                       ${NC}"
+echo -e "${tyblue}           [ 2 ]  Don't create a BOT database                   ${NC}"
 echo -e "${tyblue}└──────────────────────────────────────────┘${NC}"
 read -p "   Please select numbers 1-2 or Any Button(Random) to next : " bot
 echo ""
@@ -51,7 +51,7 @@ rm -f /usr/bin/idchat
 echo -e "[ ${green}INFO${NC} ] Create for database"
 read -rp "Enter Token (Creat on @BotFather) : " -e token2
 echo "$token2" >> /usr/bin/token
-read -rp "Enter Your Id (Creat on @userinfobot)  : " -e idchat
+read -rp "Enter Your Id (Creat on @USERinfobot)  : " -e idchat
 echo "$idchat" >> /usr/bin/idchat
 sleep 1
 bottelegram

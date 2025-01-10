@@ -5,7 +5,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ipsaya=$(wget -qO- ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/king-vpn/permission/main/seler"
+data_ip="https://raw.githubUSERcontent.com/USER058/vip/main/ip"
 checking_sc() {
   useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
   if [[ $date_list < $useexp ]]; then
@@ -16,10 +16,10 @@ checking_sc() {
     echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
     echo -e "            ${RED}DAFTAR DULU DEK !${NC}"
     echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
-    echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
+    echo -e "     \033[0;33mBuy access permission for scripts${NC}"
     echo -e "             \033[0;33mContact Admin :${NC}"
-    echo -e "         \033[0;36mTelegram${NC} t.me/masansor"
-    echo -e "      ${GREEN}WhatsApp${NC} wa.me/+6281775700114"
+    echo -e "         \033[0;36mTelegram${NC} t.me/USER058"
+    echo -e "      ${GREEN}WhatsApp${NC} wa.me/+254768381055"
     echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
 read -n 1 -s -r -p "  Press any key to back on menu"
 menu
@@ -27,7 +27,7 @@ menu
 }
 checking_sc
 clear
-Repo1="https://raw.githubusercontent.com/king-vpn/permission/main/"
+Repo1="https://raw.githubUSERcontent.com/USER058/permission/main/"
 export MYIP=$( curl -s https://ipinfo.io/ip/ )
 SELLER=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $2}')
 Exp100=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $3}')
@@ -50,9 +50,9 @@ BGX="\033[42m"
 END='\e[0m'
 AKTIF="VERIFIED"
 TOKEN=$(cat /etc/github/api)
-REPO="https://github.com/king-vpn/permission.git"
+REPO="https://github.com/USER058/permission.git"
 EMAIL=$(cat /etc/github/email)
-USER="king-vpn"
+USER="USER058"
 
 
 add-ip() {
@@ -74,7 +74,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
     exit 0
     fi
     echo -e ""
-    read -p "Username (Contoh : Tunnel-Stores) : " name
+    read -p "USERname (Contoh : Tunnel-Stores) : " name
     echo -e ""
     clear
     echo -e ""
@@ -108,15 +108,15 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
     echo "### ${name} ${exp2} ${ip}" >> /root/ipvps/ip
     fi
     cd /root/ipvps
-    git config --global user.email "${EMAIL}" &> /dev/null
-    git config --global user.name "${USER}" &> /dev/null
+    git config --global USER.email "${EMAIL}" &> /dev/null
+    git config --global USER.name "${USER}" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/king-vpn/permission
-    git push -f https://${TOKEN}@github.com/king-vpn/permission.git &> /dev/null
+    git remote add origin https://github.com/USER058/permission
+    git push -f https://${TOKEN}@github.com/USER058/permission.git &> /dev/null
     rm -rf /root/ipvps
     clear
     sleep 1
@@ -144,11 +144,11 @@ https://pastebin.com/raw/uxbRqC1K
 
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
   echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo -e "               \e[1;97mSuccesfully Add IP Address${NC}"
+    echo -e "               \e[1;97mSuccessfully Add IP Address${NC}"
     echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
     echo -e ""
-    echo -e "  ${YELL}Username${NC}      : $name"
+    echo -e "  ${YELL}USERname${NC}      : $name"
     echo -e "  ${YELL}IP Address${NC}    : $ip"
     echo -e "  ${YELL}Registered On${NC} : $today"
     echo -e "  ${YELL}Expired On${NC}    : $exp2"
@@ -184,15 +184,15 @@ TIMES="10"
     sed -i "/^### $name $exp $ipdel/,/^},{/d" /root/ipvps/ip
     fi
     cd /root/ipvps
-    git config --global user.email "${EMAIL}" &> /dev/null
-    git config --global user.name "${USER}" &> /dev/null
+    git config --global USER.email "${EMAIL}" &> /dev/null
+    git config --global USER.name "${USER}" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/king-vpn/permission
-    git push -f https://${TOKEN}@github.com/king-vpn/permission.git &> /dev/null
+    git remote add origin https://github.com/USER058/permission
+    git push -f https://${TOKEN}@github.com/USER058/permission.git &> /dev/null
     rm -rf /root/ipvps
     clear
     sleep 1
@@ -205,10 +205,10 @@ TIMES="10"
     clear
 
     echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo -e "          \e[1;97mSuccesfully Deleted The IP Address${NC}"
+    echo -e "          \e[1;97mSuccessfully Deleted The IP Address${NC}"
     echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
-    echo -e "  ${YELL}Username${NC}   : $name"
+    echo -e "  ${YELL}USERname${NC}   : $name"
     echo -e "  ${YELL}IP Address${NC} : $ipdel"
     echo -e "  ${YELL}Expired On${NC} : $exp"
     echo ""
@@ -244,15 +244,15 @@ TIMES="10"
     exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
     sed -i "s/### $name $exp $ipdel/### $name $exp4 $ipdel/g" /root/ipvps/ip
     cd /root/ipvps
-    git config --global user.email "${EMAIL}" &> /dev/null
-    git config --global user.name "${USER}" &> /dev/null
+    git config --global USER.email "${EMAIL}" &> /dev/null
+    git config --global USER.name "${USER}" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/king-vpn/permission
-    git push -f https://${TOKEN}@github.com/king-vpn/permission.git &> /dev/null
+    git remote add origin https://github.com/USER058/permission
+    git push -f https://${TOKEN}@github.com/USER058/permission.git &> /dev/null
     rm -rf /root/ipvps
     clear
     sleep 1
@@ -266,11 +266,11 @@ TIMES="10"
 
     echo ""
     echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo -e "          \e[1;97mSuccesfully Renew The IP Address${NC}"
+    echo -e "          \e[1;97mSuccessfully Renew The IP Address${NC}"
     echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
    echo ""
-    echo -e "  ${YELL}Username${NC}   : $name"
+    echo -e "  ${YELL}USERname${NC}   : $name"
     echo -e "  ${YELL}IP Address${NC} : $ipdel"
     echo -e "  ${YELL}Expired On${NC} : $exp4"
     echo ""    

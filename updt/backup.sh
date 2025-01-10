@@ -10,7 +10,7 @@ WH='\033[1;37m'
 ipsaya=$(curl -s -4 icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/User058/vip/main/ip"
+data_ip="https://raw.githubUSERcontent.com/USER058/vip/main/ip"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -33,7 +33,7 @@ checking_sc
 clear
 IP=$(wget -qO- ipv4.icanhazip.com);
 date=$(date +"%Y-%m-%d")
-echo "Mohon Menunggu , Proses Backup sedang berlangsung !!"
+echo "Please Wait, Backup in progress !!"
 rm -rf /root/backup
 mkdir /root/backup
 cp -r /etc/passwd /root/backup/ &> /dev/null
@@ -73,7 +73,7 @@ Link Backup   : $link
 Tanggal       : $date
 ==================================
 "
-echo "Silahkan di save link diatas"
+echo "Please save the link above"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu

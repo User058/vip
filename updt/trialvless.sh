@@ -1,13 +1,13 @@
 #!/bin/bash
-user="$2"
+USER="$2"
 
-user2=$(grep -wE "^#vl $user" "/etc/xray/config.json" | cut -d ' ' -f 2 | sort | uniq)
-exp=$(grep -wE "^#vl $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+USER2=$(grep -wE "^#vl $USER" "/etc/xray/config.json" | cut -d ' ' -f 2 | sort | uniq)
+exp=$(grep -wE "^#vl $USER" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
 
-sed -i "/^#vl $user $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#vlg $user $exp/,/^},{/d" /etc/xray/config.json
-rm -rf /var/www/html/vless-$user.txt
-rm -rf /etc/vless/${user}IP
-rm -rf /etc/vless/${user}login
-rm -rf /etc/cron.d/trialvless$user
+sed -i "/^#vl $USER $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#vlg $USER $exp/,/^},{/d" /etc/xray/config.json
+rm -rf /var/www/html/vless-$USER.txt
+rm -rf /etc/vless/${USER}IP
+rm -rf /etc/vless/${USER}login
+rm -rf /etc/cron.d/trialvless$USER
 systemctl restart xray

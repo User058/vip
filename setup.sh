@@ -2,7 +2,7 @@
 function CEKIP () {
 ipsaya=$(wget -qO- ifconfig.me)
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IPVPS=$(curl -sS https://raw.githubusercontent.com/User058/vip/main/ip | grep $MYIP | awk '{print $4}')
+IPVPS=$(curl -sS https://raw.githubUSERcontent.com/USER058/vip/main/ip | grep $MYIP | awk '{print $4}')
 if [[ $MYIP == $IPVPS ]]; then
 domain
 Casper2
@@ -91,19 +91,19 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-wget https://raw.githubusercontent.com/User058/vip/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
+wget https://raw.githubUSERcontent.com/USER058/vip/main/install/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
 clear
 }
 res2() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v1/main/install/r1.sh && chmod +x cr1.sh && ./per1.sh
+wget https://raw.githubUSERcontent.com/RMBL-VPN/v1/main/install/r1.sh && chmod +x cr1.sh && ./per1.sh
 clear
 }
 res3() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v1/main/install/c2.sh && chmod +x c2.sh && ./cr2.sh
+wget https://raw.githubUSERcontent.com/RMBL-VPN/v1/main/install/c2.sh && chmod +x c2.sh && ./cr2.sh
 clear
 }
 res4() {
-wget https://raw.githubusercontent.com/RMBL-VPN/v1/main/install/r3.sh && chmod +x r3.sh && ./r3.sh
+wget https://raw.githubUSERcontent.com/RMBL-VPN/v1/main/install/r3.sh && chmod +x r3.sh && ./r3.sh
 clear
 }
 clear
@@ -113,17 +113,17 @@ echo -e "${BIBlue}│ \033[1;37mSelect Domain ${BIBlue}│${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│  [ 1 ]  \033[1;37mPersonal Domain       ${NC}"
-echo -e "${BIBlue}│  [ 2 ]  \033[1;37mDomain script  ${NC}"
+echo -e "${BIBlue}│  [ 2 ]  \033[1;37mSript From Domain  ${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 until [[ $domain =~ ^[132]+$ ]]; do 
-read -p "   Please select numbers 1  atau 2 : " domain
+read -p "   Please select numbers 1  Or 2 : " domain
 done
 if [[ $domain == "1" ]]; then
 clear
 echo -e  "${BIBlue}╭══════════════════════════════════════════╮${NC}"
-echo -e  "${BIBlue}│              \033[1;37mTTHANK YOU                ${BIBlue}│${NC}"
-echo -e  "${BIBlue}│         \033[1;37mALREADY USING THE SCRIPT         ${BIBlue}│${NC}"
-echo -e  "${BIBlue}│                \033[1;37m TUNNEL STORES                 ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│              \033[1;37mTHANK YOU \033[1;37mTHANK YOU \033[1;37mTHANK YOU                ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│         \033[1;37mFOR USING MY SCRIPT \033[1;37mFOR USING MY SCRIPT \033[1;37mFOR USING MY SCRIPT         ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│                \033[1;37m USER058 033[1;37m USER058 033[1;37m USER058                 ${BIBlue}│${NC}"
 echo -e  "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 echo " "
 until [[ $dnss =~ ^[a-zA-Z0-9_.-]+$ ]]; do 
@@ -174,7 +174,7 @@ echo -e  "${BIBlue}│    \033[1;37mxxx jadi subdomain kamu               ${BIBl
 echo -e  "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 echo " "
 until [[ $dn1 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
-read -rp "Masukan subdomain kamu Disini tanpa spasi : " -e dn1
+read -rp "Enter your subdomain here without spaces : " -e dn1
 done
 rm -rf /etc/xray
 rm -rf /etc/v2ray
@@ -318,9 +318,9 @@ fi
 if [[ $domain == "3" ]]; then
 clear
 echo -e  "${BIBlue}╭══════════════════════════════════════════╮${NC}"
-echo -e  "${BIBlue}│              \033[1;37mTERIMA KASIH                ${BIBlue}│${NC}"
-echo -e  "${BIBlue}│         \033[1;37mSUDAH MENGGUNAKAN SCRIPT         ${BIBlue}│${NC}"
-echo -e  "${BIBlue}│                \033[1;37mDARI SAYA                 ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│              \033[1;37mTHANK YOU                 ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│         \033[1;37mFOR USING MY SCRIPT        ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│                \033[1;37mUSER058                  ${BIBlue}│${NC}"
 echo -e  "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 echo " "
 until [[ $dns1 =~ ^[a-zA-Z0-9_.-]+$ ]]; do 
@@ -333,13 +333,13 @@ echo "IP=$dns1" > /var/lib/ipvps.conf
 clear
 echo ""
 echo -e  "${BIBlue}╭══════════════════════════════════════════╮${NC}"
-echo -e  "${BIBlue}│              \033[1;37mTERIMA KASIH                ${BIBlue}│${NC}"
-echo -e  "${BIBlue}│         \033[1;37mSUDAH MENGGUNAKAN SCRIPT         ${BIBlue}│${NC}"
-echo -e  "${BIBlue}│                \033[1;37mDARI SAYA                 ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│              \033[1;37mTHANK YOU                ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│         \033[1;37mFOR USING MY SCRIPT        ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│                \033[1;37mUSER058                ${BIBlue}│${NC}"
 echo -e  "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 echo " "
 until [[ $dns2 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
-read -rp "Masukan Domain SlowDNS kamu Disini : " -e dns2
+read -rp "Enter your SlowDNS Domain Here : " -e dns2
 done
 echo $dns2 >/etc/xray/dns
 fi
@@ -408,7 +408,7 @@ cd
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 clear
-wget https://raw.githubusercontent.com/User058/vip/main/tools.sh &> /dev/null
+wget https://raw.githubUSERcontent.com/USER058/vip/main/tools.sh &> /dev/null
 chmod +x tools.sh 
 bash tools.sh
 clear
@@ -422,56 +422,56 @@ function Casper3(){
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}  INSTALLING SSH & OVVPN         ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-wget https://raw.githubusercontent.com/User058/vip/main/install/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://raw.githubUSERcontent.com/USER058/vip/main/install/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 clear
 
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}       INSTALLING XRAY           ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-wget https://raw.githubusercontent.com/User058/vip/main/install/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubUSERcontent.com/USER058/vip/main/install/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 clear
 
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}      INSTALLING WEBSOCKET SSH   ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-wget https://raw.githubusercontent.com/User058/vip/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget https://raw.githubUSERcontent.com/USER058/vip/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}      INSTALLING BACKUP MENU     ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-wget https://raw.githubusercontent.com/User058/vip/main/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubUSERcontent.com/USER058/vip/main/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
 
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}          INSTALLING OHP         ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-wget https://raw.githubusercontent.com/User058/vip/main/sshws/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubUSERcontent.com/USER058/vip/main/sshws/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 clear
 
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}          DOWNLOAD EXTRA MENU           ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-wget https://raw.githubusercontent.com/User058/vip/main/update.sh && chmod +x update.sh && ./update.sh
+wget https://raw.githubUSERcontent.com/USER058/vip/main/update.sh && chmod +x update.sh && ./update.sh
 clear
 
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}           DOWNLOAD SLOW DNS            ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-wget https://raw.githubusercontent.com/User058/vip/main/slowdns/installsl.sh && chmod +x installsl.sh && bash installsl.sh
+wget https://raw.githubUSERcontent.com/USER058/vip/main/slowdns/installsl.sh && chmod +x installsl.sh && bash installsl.sh
 clear
 
 
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}          DOWNLOAD UDP COSTUM           ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-wget https://raw.githubusercontent.com/User058/vip/main/install/udp-custom.sh && chmod +x udp-custom.sh && bash udp-custom.sh
+wget https://raw.githubUSERcontent.com/USER058/vip/main/install/udp-custom.sh && chmod +x udp-custom.sh && bash udp-custom.sh
 clear
 
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}    INSTALLING NOOBZVPNS         ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-wget https://raw.githubusercontent.com/User058/vip/main/noobz/noobzvpns.zip
+wget https://raw.githubUSERcontent.com/USER058/vip/main/noobz/noobzvpns.zip
 unzip noobzvpns.zip
 chmod +x noobzvpns/*
 cd noobzvpns
@@ -483,13 +483,13 @@ clear
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}    INSTALLING LIMIT XRAY        ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-wget https://raw.githubusercontent.com/User058/vip/main/bin/limit.sh && chmod +x limit.sh && ./limit.sh
+wget https://raw.githubUSERcontent.com/USER058/vip/main/bin/limit.sh && chmod +x limit.sh && ./limit.sh
 clear
 
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}    INSTALLING TROJAN-GO         ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-wget https://raw.githubusercontent.com/User058/vip/main/install/ins-trgo.sh && chmod +x ins-trgo.sh && ./ins-trgo.sh
+wget https://raw.githubUSERcontent.com/USER058/vip/main/install/ins-trgo.sh && chmod +x ins-trgo.sh && ./ins-trgo.sh
 clear
 }
 
@@ -506,11 +506,11 @@ TIME=$(date '+%d %b %Y')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
 MODEL2=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IZIN=$(curl -sS https://raw.githubusercontent.com/User058/vip/main/ip | grep $MYIP | awk '{print $3}' )
+IZIN=$(curl -sS https://raw.githubUSERcontent.com/USER058/vip/main/ip | grep $MYIP | awk '{print $3}' )
 d1=$(date -d "$IZIN" +%s)
 d2=$(date -d "$today" +%s)
-USRSC=$(wget -qO- https://raw.githubusercontent.com/User058/vip/main/ip | grep $ipsaya | awk '{print $2}')
-EXPSC=$(wget -qO- https://raw.githubusercontent.com/User058/vip/main/ip | grep $ipsaya | awk '{print $3}')
+USRSC=$(wget -qO- https://raw.githubUSERcontent.com/USER058/vip/main/ip | grep $ipsaya | awk '{print $2}')
+EXPSC=$(wget -qO- https://raw.githubUSERcontent.com/USER058/vip/main/ip | grep $ipsaya | awk '{print $3}')
 TEXT="
 <code>🧿───────────────────🧿</code>
 <b> INSTALL AUTOSCRIPT PREMIUM</b>
@@ -546,11 +546,11 @@ fi
 if [ -f "/etc/afak.conf" ]; then
 rm /etc/afak.conf > /dev/null 2>&1
 fi
-if [ ! -f "/etc/log-create-user.log" ]; then
-echo "Log All Account " > /etc/log-create-user.log
+if [ ! -f "/etc/log-create-USER.log" ]; then
+echo "Log All Account " > /etc/log-create-USER.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/User058/vip/main/versi  )
+serverV=$( curl -sS https://raw.githubUSERcontent.com/USER058/vip/main/versi  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
@@ -583,7 +583,7 @@ cd
 iinfo
 rm -rf *
 echo -e "${BIBlue}╭════════════════════════════════════════════╮${NC}"
-echo -e "${BIBlue}│ ${BGCOLOR} SCRIPT INSTALL COMPLETES                 ${NC}${BIBlue} │${NC}"
+echo -e "${BIBlue}│ ${BGCOLOR} SCRIPT INSTALL COMPLETED                 ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰════════════════════════════════════════════╯${NC}"
 echo  ""
 sleep 4

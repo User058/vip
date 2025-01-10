@@ -9,7 +9,7 @@ WH='\033[1;37m'
 ipsaya=$(wget -qO- ifconfig.me)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/User058/vip/main/ip"
+data_ip="https://raw.githubUSERcontent.com/USER058/vip/main/ip"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -72,12 +72,12 @@ service dropbear restart > /dev/null 2>&1;
 if [[ ${1+x} ]]; then
 MAX=$limitip;
 fi
-cat /etc/passwd | grep "/home/" | cut -d":" -f1 > /etc/user.txt
-username1=( `cat "/etc/user.txt" `);
+cat /etc/passwd | grep "/home/" | cut -d":" -f1 > /etc/USER.txt
+USERname1=( `cat "/etc/USER.txt" `);
 i="0";
-for user in "${username1[@]}"
+for USER in "${USERname1[@]}"
 do
-username[$i]=`echo $user | sed 's/'\''//g'`;
+USERname[$i]=`echo $USER | sed 's/'\''//g'`;
 jumlah[$i]=0;
 i=$i+1;
 done
@@ -93,9 +93,9 @@ if [ $NUM -eq 1 ]; then
 TIME=$(date +'%H:%M:%S')
 echo "$USER $TIME : $IP" >>/tmp/ssh
 i=0;
-for user1 in "${username[@]}"
+for USER1 in "${USERname[@]}"
 do
-if [ "$USER" == "$user1" ]; then
+if [ "$USER" == "$USER1" ]; then
 jumlah[$i]=`expr ${jumlah[$i]} + 1`;
 pid[$i]="${pid[$i]} $PID"
 fi
@@ -115,9 +115,9 @@ if [ $NUM -eq 1 ]; then
 TIME=$(date +'%H:%M:%S')
 echo "$USER $TIME : $IP" >>/tmp/ssh
 i=0;
-for user1 in "${username[@]}"
+for USER1 in "${USERname[@]}"
 do
-if [ "$USER" == "$user1" ]; then
+if [ "$USER" == "$USER1" ]; then
 jumlah[$i]=`expr ${jumlah[$i]} + 1`;
 pid[$i]="${pid[$i]} $PID"
 fi
@@ -126,14 +126,14 @@ done
 fi
 done
 j="0";
-for i in ${!username[*]}
+for i in ${!USERname[*]}
 do
-limitip=$(cat /etc/xray/sshx/${username[$i]}IP)
+limitip=$(cat /etc/xray/sshx/${USERname[$i]}IP)
 if [[ ${jumlah[$i]} -gt $limitip ]]; then
 date=`date +"%Y-%m-%d %X"`;
-echo "$date - ${username[$i]} - ${jumlah[$i]}" >> /etc/xray/sshx/${username[$i]}login;
-sship=$(cat /etc/xray/sshx/${username[$i]}login | wc -l)
-sship2=$(cat /tmp/ssh | grep -w "${username[$i]}" | cut -d ' ' -f 2-8 | nl -s '. ' )
+echo "$date - ${USERname[$i]} - ${jumlah[$i]}" >> /etc/xray/sshx/${USERname[$i]}login;
+sship=$(cat /etc/xray/sshx/${USERname[$i]}login | wc -l)
+sship2=$(cat /tmp/ssh | grep -w "${USERname[$i]}" | cut -d ' ' -f 2-8 | nl -s '. ' )
 ssssh1=$(ls "/etc/xray/sshx" | grep -w "notif")
 if [[ -z ${sssh1} ]]; then
 ssssh="3"
@@ -149,7 +149,7 @@ TEXT2="
 <b>DOMAIN : ${domen} </b>
 <b>ISP : ${ISP}</b>
 <b>CITY : $CITY</b>
-<b>USERNAME : ${username[$i]} </b>
+<b>USERNAME : ${USERname[$i]} </b>
 <b>TOTAL LOGIN IP : ${jumlah[$i]} </b>
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <b>TIME LOGIN : IP LOGIN </b>
@@ -157,15 +157,15 @@ TEXT2="
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <i>${ssssh}x Multi Login Auto Lock Account...</i>
 "
-sed -i "/${username[$i]}/d" /var/log/auth.log
+sed -i "/${USERname[$i]}/d" /var/log/auth.log
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT2&parse_mode=html" $URL >/dev/null
 cd
-exp=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
-pass=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
-echo "### ${username[$i]} $exp $pass" >> /etc/xray/sshx/listlock
-passwd -l ${username[$i]}
+exp=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
+pass=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
+echo "### ${USERname[$i]} $exp $pass" >> /etc/xray/sshx/listlock
+passwd -l ${USERname[$i]}
 cd
-rm -rf /etc/xray/sshx/${username[$i]}login
+rm -rf /etc/xray/sshx/${USERname[$i]}login
 systemctl restart ws-stunnel > /dev/null 2>&1
 systemctl restart ws-dropbear > /dev/null 2>&1
 fi
@@ -177,7 +177,7 @@ TEXT2="
 <b>DOMAIN : ${domen} </b>
 <b>ISP : ${ISP}</b>
 <b>CITY : $CITY</b>
-<b>USERNAME : ${username[$i]} </b>
+<b>USERNAME : ${USERname[$i]} </b>
 <b>TOTAL LOGIN IP : ${jumlah[$i]} </b>
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <b>TIME LOGIN : IP LOGIN </b>
@@ -185,19 +185,19 @@ TEXT2="
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <i>${ssssh}x Multi Login Lock Account $waktulockssh Minutes...</i>
 "
-sed -i "/${username[$i]}/d" /var/log/auth.log
+sed -i "/${USERname[$i]}/d" /var/log/auth.log
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT2&parse_mode=html" $URL >/dev/null
 cd
-exp=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
-pass=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
-echo "### ${username[$i]} $exp $pass" >> /etc/xray/sshx/listlock
-passwd -l ${username[$i]}
+exp=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
+pass=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
+echo "### ${USERname[$i]} $exp $pass" >> /etc/xray/sshx/listlock
+passwd -l ${USERname[$i]}
 cd
-rm -rf /etc/xray/sshx/${username[$i]}login
-cat> /etc/cron.d/ssh${username[$i]}<< EOF
+rm -rf /etc/xray/sshx/${USERname[$i]}login
+cat> /etc/cron.d/ssh${USERname[$i]}<< EOF
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-*/$waktulockssh * * * * root /usr/bin/xray ssh ${username[$i]} $pass $exp
+*/$waktulockssh * * * * root /usr/bin/xray ssh ${USERname[$i]} $pass $exp
 EOF
 systemctl restart ws-stunnel > /dev/null 2>&1
 restart service cron > /dev/null 2>&1
@@ -211,7 +211,7 @@ TEXT="
 <b>ISP : ${ISP}</b>
 <b>CITY : $CITY</b>
 <b>DATE LOGIN : $DATE</b>
-<b>USERNAME : ${username[$i]} </b>
+<b>USERNAME : ${USERname[$i]} </b>
 <b>TOTAL LOGIN IP : ${jumlah[$i]} </b>
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <b>TIME LOGIN : IP LOGIN </b>
@@ -219,17 +219,17 @@ TEXT="
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <i>${sship}x Multi Login : ${ssssh}x Multi Login Auto Lock Account...</i>
 "
-sed -i "/${username[$i]}/d" /var/log/auth.log
+sed -i "/${USERname[$i]}/d" /var/log/auth.log
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 fi
 if [ $sship -gt $ssssh ]; then
-exp=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
-pass=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
-echo "### ${username[$i]} $exp $pass" >> /etc/xray/sshx/listlock
-passwd -l ${username[$i]}
-sed -i "/^### ${username[$i]} $exp $pass/d" /etc/xray/ssh
+exp=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
+pass=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
+echo "### ${USERname[$i]} $exp $pass" >> /etc/xray/sshx/listlock
+passwd -l ${USERname[$i]}
+sed -i "/^### ${USERname[$i]} $exp $pass/d" /etc/xray/ssh
 cd
-rm -rf /etc/xray/sshx/${username[$i]}login
+rm -rf /etc/xray/sshx/${USERname[$i]}login
 systemctl restart ws-stunnel > /dev/null 2>&1
 systemctl restart ws-dropbear > /dev/null 2>&1
 fi
@@ -252,7 +252,7 @@ WH='\033[1;37m'
 ipsaya=$(wget -qO- ifconfig.me)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/User058/vip/main/ip"
+data_ip="https://raw.githubUSERcontent.com/USER058/vip/main/ip"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -315,12 +315,12 @@ service dropbear restart > /dev/null 2>&1;
 if [[ ${1+x} ]]; then
 MAX=$limitip;
 fi
-cat /etc/passwd | grep "/home/" | cut -d":" -f1 > /etc/user.txt
-username1=( `cat "/etc/user.txt" `);
+cat /etc/passwd | grep "/home/" | cut -d":" -f1 > /etc/USER.txt
+USERname1=( `cat "/etc/USER.txt" `);
 i="0";
-for user in "${username1[@]}"
+for USER in "${USERname1[@]}"
 do
-username[$i]=`echo $user | sed 's/'\''//g'`;
+USERname[$i]=`echo $USER | sed 's/'\''//g'`;
 jumlah[$i]=0;
 i=$i+1;
 done
@@ -336,9 +336,9 @@ if [ $NUM -eq 1 ]; then
 TIME=$(date +'%H:%M:%S')
 echo "$USER $TIME : $IP" >>/tmp/ssh
 i=0;
-for user1 in "${username[@]}"
+for USER1 in "${USERname[@]}"
 do
-if [ "$USER" == "$user1" ]; then
+if [ "$USER" == "$USER1" ]; then
 jumlah[$i]=`expr ${jumlah[$i]} + 1`;
 pid[$i]="${pid[$i]} $PID"
 fi
@@ -358,9 +358,9 @@ if [ $NUM -eq 1 ]; then
 TIME=$(date +'%H:%M:%S')
 echo "$USER $TIME : $IP" >>/tmp/ssh
 i=0;
-for user1 in "${username[@]}"
+for USER1 in "${USERname[@]}"
 do
-if [ "$USER" == "$user1" ]; then
+if [ "$USER" == "$USER1" ]; then
 jumlah[$i]=`expr ${jumlah[$i]} + 1`;
 pid[$i]="${pid[$i]} $PID"
 fi
@@ -369,14 +369,14 @@ done
 fi
 done
 j="0";
-for i in ${!username[*]}
+for i in ${!USERname[*]}
 do
-limitip=$(cat /etc/xray/sshx/${username[$i]}IP)
+limitip=$(cat /etc/xray/sshx/${USERname[$i]}IP)
 if [[ ${jumlah[$i]} -gt $limitip ]]; then
 date=`date +"%Y-%m-%d %X"`;
-echo "$date - ${username[$i]} - ${jumlah[$i]}" >> /etc/xray/sshx/${username[$i]}login;
-sship=$(cat /etc/xray/sshx/${username[$i]}login | wc -l)
-sship2=$(cat /tmp/ssh | grep -w "${username[$i]}" | cut -d ' ' -f 2-8 | nl -s '. ' )
+echo "$date - ${USERname[$i]} - ${jumlah[$i]}" >> /etc/xray/sshx/${USERname[$i]}login;
+sship=$(cat /etc/xray/sshx/${USERname[$i]}login | wc -l)
+sship2=$(cat /tmp/ssh | grep -w "${USERname[$i]}" | cut -d ' ' -f 2-8 | nl -s '. ' )
 ssssh1=$(ls "/etc/xray/sshx" | grep -w "notif")
 if [[ -z ${sssh1} ]]; then
 ssssh="3"
@@ -392,7 +392,7 @@ TEXT2="
 <b>DOMAIN : ${domen} </b>
 <b>ISP : ${ISP}</b>
 <b>CITY : $CITY</b>
-<b>USERNAME : ${username[$i]} </b>
+<b>USERNAME : ${USERname[$i]} </b>
 <b>TOTAL LOGIN IP : ${jumlah[$i]} </b>
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <b>TIME LOGIN : IP LOGIN </b>
@@ -400,15 +400,15 @@ TEXT2="
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <i>${ssssh}x Multi Login Auto Lock Account...</i>
 "
-sed -i "/${username[$i]}/d" /var/log/auth.log
+sed -i "/${USERname[$i]}/d" /var/log/auth.log
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT2&parse_mode=html" $URL >/dev/null
 cd
-exp=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
-pass=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
-echo "### ${username[$i]} $exp $pass" >> /etc/xray/sshx/listlock
-passwd -l ${username[$i]}
+exp=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
+pass=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
+echo "### ${USERname[$i]} $exp $pass" >> /etc/xray/sshx/listlock
+passwd -l ${USERname[$i]}
 cd
-rm -rf /etc/xray/sshx/${username[$i]}login
+rm -rf /etc/xray/sshx/${USERname[$i]}login
 systemctl restart ws-stunnel > /dev/null 2>&1
 systemctl restart ws-dropbear > /dev/null 2>&1
 fi
@@ -420,7 +420,7 @@ TEXT2="
 <b>DOMAIN : ${domen} </b>
 <b>ISP : ${ISP}</b>
 <b>CITY : $CITY</b>
-<b>USERNAME : ${username[$i]} </b>
+<b>USERNAME : ${USERname[$i]} </b>
 <b>TOTAL LOGIN IP : ${jumlah[$i]} </b>
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <b>TIME LOGIN : IP LOGIN </b>
@@ -428,19 +428,19 @@ TEXT2="
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <i>${ssssh}x Multi Login Lock Account $waktulockssh Minutes...</i>
 "
-sed -i "/${username[$i]}/d" /var/log/auth.log
+sed -i "/${USERname[$i]}/d" /var/log/auth.log
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT2&parse_mode=html" $URL >/dev/null
 cd
-exp=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
-pass=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
-echo "### ${username[$i]} $exp $pass" >> /etc/xray/sshx/listlock
-passwd -l ${username[$i]}
+exp=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
+pass=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
+echo "### ${USERname[$i]} $exp $pass" >> /etc/xray/sshx/listlock
+passwd -l ${USERname[$i]}
 cd
-rm -rf /etc/xray/sshx/${username[$i]}login
-cat> /etc/cron.d/ssh${username[$i]}<< EOF
+rm -rf /etc/xray/sshx/${USERname[$i]}login
+cat> /etc/cron.d/ssh${USERname[$i]}<< EOF
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-*/$waktulockssh * * * * root /usr/bin/xray ssh ${username[$i]} $pass $exp
+*/$waktulockssh * * * * root /usr/bin/xray ssh ${USERname[$i]} $pass $exp
 EOF
 systemctl restart ws-stunnel > /dev/null 2>&1
 restart service cron > /dev/null 2>&1
@@ -454,7 +454,7 @@ TEXT="
 <b>ISP : ${ISP}</b>
 <b>CITY : $CITY</b>
 <b>DATE LOGIN : $DATE</b>
-<b>USERNAME : ${username[$i]} </b>
+<b>USERNAME : ${USERname[$i]} </b>
 <b>TOTAL LOGIN IP : ${jumlah[$i]} </b>
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <b>TIME LOGIN : IP LOGIN </b>
@@ -462,11 +462,11 @@ TEXT="
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <i>${sship}x Multi Login : ${ssssh}x Multi Login Auto Lock Account...</i>
 "
-sed -i "/${username[$i]}/d" /var/log/auth.log
+sed -i "/${USERname[$i]}/d" /var/log/auth.log
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 fi
 if [ $sship -gt $ssssh ]; then
-exp=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
+exp=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
 passq"      dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 colornow=$(cat /etc/rmbl/theme/color.conf)
@@ -478,7 +478,7 @@ WH='\033[1;37m'
 ipsaya=$(wget -qO- ifconfig.me)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/User058/vip/main/ip"
+data_ip="https://raw.githubUSERcontent.com/USER058/vip/main/ip"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -541,12 +541,12 @@ service dropbear restart > /dev/null 2>&1;
 if [[ ${1+x} ]]; then
 MAX=$limitip;
 fi
-cat /etc/passwd | grep "/home/" | cut -d":" -f1 > /etc/user.txt
-username1=( `cat "/etc/user.txt" `);
+cat /etc/passwd | grep "/home/" | cut -d":" -f1 > /etc/USER.txt
+USERname1=( `cat "/etc/USER.txt" `);
 i="0";
-for user in "${username1[@]}"
+for USER in "${USERname1[@]}"
 do
-username[$i]=`echo $user | sed 's/'\''//g'`;
+USERname[$i]=`echo $USER | sed 's/'\''//g'`;
 jumlah[$i]=0;
 i=$i+1;
 done
@@ -562,9 +562,9 @@ if [ $NUM -eq 1 ]; then
 TIME=$(date +'%H:%M:%S')
 echo "$USER $TIME : $IP" >>/tmp/ssh
 i=0;
-for user1 in "${username[@]}"
+for USER1 in "${USERname[@]}"
 do
-if [ "$USER" == "$user1" ]; then
+if [ "$USER" == "$USER1" ]; then
 jumlah[$i]=`expr ${jumlah[$i]} + 1`;
 pid[$i]="${pid[$i]} $PID"
 fi
@@ -584,9 +584,9 @@ if [ $NUM -eq 1 ]; then
 TIME=$(date +'%H:%M:%S')
 echo "$USER $TIME : $IP" >>/tmp/ssh
 i=0;
-for user1 in "${username[@]}"
+for USER1 in "${USERname[@]}"
 do
-if [ "$USER" == "$user1" ]; then
+if [ "$USER" == "$USER1" ]; then
 jumlah[$i]=`expr ${jumlah[$i]} + 1`;
 pid[$i]="${pid[$i]} $PID"
 fi
@@ -595,14 +595,14 @@ done
 fi
 done
 j="0";
-for i in ${!username[*]}
+for i in ${!USERname[*]}
 do
-limitip=$(cat /etc/xray/sshx/${username[$i]}IP)
+limitip=$(cat /etc/xray/sshx/${USERname[$i]}IP)
 if [[ ${jumlah[$i]} -gt $limitip ]]; then
 date=`date +"%Y-%m-%d %X"`;
-echo "$date - ${username[$i]} - ${jumlah[$i]}" >> /etc/xray/sshx/${username[$i]}login;
-sship=$(cat /etc/xray/sshx/${username[$i]}login | wc -l)
-sship2=$(cat /tmp/ssh | grep -w "${username[$i]}" | cut -d ' ' -f 2-8 | nl -s '. ' )
+echo "$date - ${USERname[$i]} - ${jumlah[$i]}" >> /etc/xray/sshx/${USERname[$i]}login;
+sship=$(cat /etc/xray/sshx/${USERname[$i]}login | wc -l)
+sship2=$(cat /tmp/ssh | grep -w "${USERname[$i]}" | cut -d ' ' -f 2-8 | nl -s '. ' )
 ssssh1=$(ls "/etc/xray/sshx" | grep -w "notif")
 if [[ -z ${sssh1} ]]; then
 ssssh="3"
@@ -618,7 +618,7 @@ TEXT2="
 <b>DOMAIN : ${domen} </b>
 <b>ISP : ${ISP}</b>
 <b>CITY : $CITY</b>
-<b>USERNAME : ${username[$i]} </b>
+<b>USERNAME : ${USERname[$i]} </b>
 <b>TOTAL LOGIN IP : ${jumlah[$i]} </b>
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <b>TIME LOGIN : IP LOGIN </b>
@@ -626,15 +626,15 @@ TEXT2="
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <i>${ssssh}x Multi Login Auto Lock Account...</i>
 "
-sed -i "/${username[$i]}/d" /var/log/auth.log
+sed -i "/${USERname[$i]}/d" /var/log/auth.log
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT2&parse_mode=html" $URL >/dev/null
 cd
-exp=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
-pass=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
-echo "### ${username[$i]} $exp $pass" >> /etc/xray/sshx/listlock
-passwd -l ${username[$i]}
+exp=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
+pass=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
+echo "### ${USERname[$i]} $exp $pass" >> /etc/xray/sshx/listlock
+passwd -l ${USERname[$i]}
 cd
-rm -rf /etc/xray/sshx/${username[$i]}login
+rm -rf /etc/xray/sshx/${USERname[$i]}login
 systemctl restart ws-stunnel > /dev/null 2>&1
 systemctl restart ws-dropbear > /dev/null 2>&1
 fi
@@ -646,7 +646,7 @@ TEXT2="
 <b>DOMAIN : ${domen} </b>
 <b>ISP : ${ISP}</b>
 <b>CITY : $CITY</b>
-<b>USERNAME : ${username[$i]} </b>
+<b>USERNAME : ${USERname[$i]} </b>
 <b>TOTAL LOGIN IP : ${jumlah[$i]} </b>
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <b>TIME LOGIN : IP LOGIN </b>
@@ -654,19 +654,19 @@ TEXT2="
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <i>${ssssh}x Multi Login Lock Account $waktulockssh Minutes...</i>
 "
-sed -i "/${username[$i]}/d" /var/log/auth.log
+sed -i "/${USERname[$i]}/d" /var/log/auth.log
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT2&parse_mode=html" $URL >/dev/null
 cd
-exp=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
-pass=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
-echo "### ${username[$i]} $exp $pass" >> /etc/xray/sshx/listlock
-passwd -l ${username[$i]}
+exp=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
+pass=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
+echo "### ${USERname[$i]} $exp $pass" >> /etc/xray/sshx/listlock
+passwd -l ${USERname[$i]}
 cd
-rm -rf /etc/xray/sshx/${username[$i]}login
-cat> /etc/cron.d/ssh${username[$i]}<< EOF
+rm -rf /etc/xray/sshx/${USERname[$i]}login
+cat> /etc/cron.d/ssh${USERname[$i]}<< EOF
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-*/$waktulockssh * * * * root /usr/bin/xray ssh ${username[$i]} $pass $exp
+*/$waktulockssh * * * * root /usr/bin/xray ssh ${USERname[$i]} $pass $exp
 EOF
 systemctl restart ws-stunnel > /dev/null 2>&1
 restart service cron > /dev/null 2>&1
@@ -680,7 +680,7 @@ TEXT="
 <b>ISP : ${ISP}</b>
 <b>CITY : $CITY</b>
 <b>DATE LOGIN : $DATE</b>
-<b>USERNAME : ${username[$i]} </b>
+<b>USERNAME : ${USERname[$i]} </b>
 <b>TOTAL LOGIN IP : ${jumlah[$i]} </b>
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <b>TIME LOGIN : IP LOGIN </b>
@@ -688,17 +688,17 @@ TEXT="
 <code>◇━━━━━━━━━━━━━━━━◇</code>
 <i>${sship}x Multi Login : ${ssssh}x Multi Login Auto Lock Account...</i>
 "
-sed -i "/${username[$i]}/d" /var/log/auth.log
+sed -i "/${USERname[$i]}/d" /var/log/auth.log
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 fi
 if [ $sship -gt $ssssh ]; then
-exp=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
-pass=$(grep -i "### ${username[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
-echo "### ${username[$i]} $exp $pass" >> /etc/xray/sshx/listlock
-passwd -l ${username[$i]}
-sed -i "/^### ${username[$i]} $exp $pass/d" /etc/xray/ssh
+exp=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 3 | sort | uniq)
+pass=$(grep -i "### ${USERname[$i]}" "/etc/xray/ssh" | cut -d ' ' -f 4 | sort | uniq)
+echo "### ${USERname[$i]} $exp $pass" >> /etc/xray/sshx/listlock
+passwd -l ${USERname[$i]}
+sed -i "/^### ${USERname[$i]} $exp $pass/d" /etc/xray/ssh
 cd
-rm -rf /etc/xray/sshx/${username[$i]}login
+rm -rf /etc/xray/sshx/${USERname[$i]}login
 systemctl restart ws-stunnel > /dev/null 2>&1
 systemctl restart ws-dropbear > /dev/null 2>&1
 fi

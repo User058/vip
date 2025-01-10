@@ -55,25 +55,25 @@ domain=`cat /etc/xray/domain`
 CHATID2=$(cat /etc/perlogin/id)
 KEY2=$(cat /etc/perlogin/token)
 URL2="https://api.telegram.org/bot$KEY2/sendMessage"
-if [ ! -e /etc/trojan-go/akun ]; then
-mkdir -p /etc/trojan-go/akun
+if [ ! -e /etc/trojan-go/USER ]; then
+mkdir -p /etc/trojan-go/USER
 fi
 function addtrgo() {
 
-until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
-		read -rp "Username : " -e user
-		user_EXISTS=$(grep -w $user /etc/trojan-go/trgo | wc -l)
+until [[ $USER =~ ^[a-zA-Z0-9_]+$ && ${USER_EXISTS} == '0' ]]; do
+		read -rp "USERname : " -e USER
+		USER_EXISTS=$(grep -w $USER /etc/trojan-go/trgo | wc -l)
 
-		if [[ ${user_EXISTS} == '1' ]]; then
+		if [[ ${USER_EXISTS} == '1' ]]; then
 			echo ""
-			echo -e "Username ${COLOR1}${user}${NC} Already On VPS Please Choose Another"
+			echo -e "USERname ${COLOR1}${USER}${NC} Already On VPS Please Choose Another"
 			exit 1
 		fi
 	done
 uuid=$(cat /etc/trojan-go/uuid.txt)
 read -p "Expired (days): " masaaktif
-read -p "Limit User (IP) or 0 Unlimited: " iplimit
-read -p "Limit User (GB) or 0 Unlimited: " Quota
+read -p "Limit USER (IP) or 0 Unlimited: " iplimit
+read -p "Limit USER (GB) or 0 Unlimited: " Quota
 tgl=$(date -d "$masaaktif days" +"%d")
 bln=$(date -d "$masaaktif days" +"%b")
 thn=$(date -d "$masaaktif days" +"%Y")
@@ -84,11 +84,11 @@ thn2=$(date +"%Y")
 tnggl="$tgl2 $bln2, $thn2"
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 hariini=`date -d "0 days" +"%Y-%m-%d"`
-sed -i '/"'""$uuid""'"$/a\,"'""$user""'"' /etc/trojan-go/config.json
-echo -e "### $user $exp" >> /etc/trojan-go/trgo
+sed -i '/"'""$uuid""'"$/a\,"'""$USER""'"' /etc/trojan-go/config.json
+echo -e "### $USER $exp" >> /etc/trojan-go/trgo
 systemctl restart trojan-go.service
-linktls="trojan-go://${user}@${domain}:2087/?sni=${domain}&type=ws&host=${domain}&path=/trojango&encryption=none#$user"
-linktrgotls="trojan-go://${user}@${domain}:2087?%26sni=${domain}%26type=ws%26host=${domain}%26path=%2Ftrojango%26encryption=none#${user}"
+linktls="trojan-go://${USER}@${domain}:2087/?sni=${domain}&type=ws&host=${domain}&path=/trojango&encryption=none#$USER"
+linktrgotls="trojan-go://${USER}@${domain}:2087?%26sni=${domain}%26type=ws%26host=${domain}%26path=%2Ftrojango%26encryption=none#${USER}"
 
 if [ ! -e /etc/trojan-go ]; then
   mkdir -p /etc/trojan-go
@@ -96,7 +96,7 @@ fi
 
 if [[ $iplimit -gt 0 ]]; then
 mkdir -p /etc/sfvt/limit/trojan-go/ip
-echo -e "$iplimit" > /etc/sfvt/limit/trojan-go/ip/$user
+echo -e "$iplimit" > /etc/sfvt/limit/trojan-go/ip/$USER
 else
 echo > /dev/null
 fi
@@ -109,22 +109,22 @@ c=$(echo "${Quota}" | sed 's/[^0-9]*//g')
 d=$((${c} * 1024 * 1024 * 1024))
 
 if [[ ${c} != "0" ]]; then
-  echo "${d}" >/etc/trojan-go/${user}
+  echo "${d}" >/etc/trojan-go/${USER}
 fi
-DATADB=$(cat /etc/trojan-go/trgo | grep "^###" | grep -w "${user}" | awk '{print $2}')
+DATADB=$(cat /etc/trojan-go/trgo | grep "^###" | grep -w "${USER}" | awk '{print $2}')
 if [[ "${DATADB}" != '' ]]; then
-  sed -i "/\b${user}\b/d" /etc/trojan-go/trgo
+  sed -i "/\b${USER}\b/d" /etc/trojan-go/trgo
 fi
-echo "### ${user} ${exp} ${uuid} ${Quota} ${iplimit}" >>/etc/trojan-go/trgo
+echo "### ${USER} ${exp} ${uuid} ${Quota} ${iplimit}" >>/etc/trojan-go/trgo
 TEXT="
 ◇━━━━━━━━━━━━━━━━━◇
 Premium Trojan-GO Account
 ◇━━━━━━━━━━━━━━━━━◇
-Remarks : <code>${user}</code>
+Remarks : <code>${USER}</code>
 IP/Host : <code>${MYIP}</code>
 Address : <code>${domain}</code>
 Port : <code>2087</code>
-Password : <code>${user}</code>
+Password : <code>${USER}</code>
 Encryption : <code>none</code>
 Path : <code>/trojango</code>
 Created : <code>$hariini</code>
@@ -141,31 +141,31 @@ else
 echo "$TEXT" > /etc/notiftele
 bash /etc/tele
 fi
-user2=$(echo "$user" | cut -c 1-3)
+USER2=$(echo "$USER" | cut -c 1-3)
 TIME2=$(date +'%Y-%m-%d %H:%M:%S')
 TEXT2="
 <code>◇━━━━━━━━━━━━━━━━━━━◇</code>
-<b>   PEMBELIAN TROJAN-GO SUCCES </b>
+<b>   PEMBELIAN TROJAN-GO Success </b>
 <code>◇━━━━━━━━━━━━━━━━━━━◇</code>
 <b>DOMAIN  :</b> <code>${domain} </code>
 <b>CITY    :</b> <code>$CITY </code>
 <b>DATE    :</b> <code>${TIME2} WIB </code>
 <b>DETAIL  :</b> <code>Trx TROJAN-GO </code>
-<b>USER    :</b> <code>${user2}xxx </code>
+<b>USER    :</b> <code>${USER2}xxx </code>
 <b>IP      :</b> <code>${iplimit} IP </code>
 <b>DURASI  :</b> <code>$masaaktif Hari </code>
 <code>◇━━━━━━━━━━━━━━━━━━━◇</code>
-<i>Notif Pembelian Akun Trojan-GO..</i>"
+<i>Notif Pembelian USER Trojan-GO..</i>"
 curl -s --max-time $TIMES -d "chat_id=$CHATID2&disable_web_page_preview=1&text=$TEXT2&parse_mode=html" $URL2 >/dev/null
 clear
 echo -e ""
 echo -e "$COLOR1 ◇━━━━━━━━━━━━━━━━━━━◇$NC"
 echo -e "$WH• Premium Trojan-Go Account • $NC"
 echo -e "$COLOR1 ◇━━━━━━━━━━━━━━━━━━━◇$NC"
-echo -e "$WH  Remarks : ${user} $NC "
+echo -e "$WH  Remarks : ${USER} $NC "
 echo -e "$WH  Address : ${domain} $NC "
 echo -e "$WH  Port TLS : 2087 $NC "
-echo -e "$WH  Key : ${user} $NC "
+echo -e "$WH  Key : ${USER} $NC "
 echo -e "$WH  Encryption : none $NC "
 echo -e "$WH  Path : /trojango $NC "
 echo -e "$WH  Expired : $exp $NC "
@@ -190,7 +190,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan-go/trgo")
 	echo " Select the existing client you want to remove"
 	echo " Press CTRL+C to return"
 	echo " ==============================="
-	echo "     No  Expired   User"
+	echo "     No  Expired   USER"
 	grep -E "^### " "/etc/trojan-go/trgo" | cut -d ' ' -f 2-3 | nl -s ') '
 	until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
 		if [[ ${CLIENT_NUMBER} == '1' ]]; then
@@ -200,10 +200,10 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan-go/trgo")
 		fi
 	done
 CLIENT_NAME=$(grep -E "^### " "/etc/trojan-go/trgo" | cut -d ' ' -f 2-3 | sed -n "${CLIENT_NUMBER}"p)
-user=$(grep -E "^### " "/etc/trojan-go/trgo" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
+USER=$(grep -E "^### " "/etc/trojan-go/trgo" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/trojan-go/trgo" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
-sed -i "/^### $user $exp/d" /etc/trojan-go/trgo
-sed -i '/^,"'"$user"'"$/d' /etc/trojan-go/config.json
+sed -i "/^### $USER $exp/d" /etc/trojan-go/trgo
+sed -i '/^,"'"$USER"'"$/d' /etc/trojan-go/config.json
 systemctl restart trojan-go.service
 service cron restart
 clear
@@ -211,7 +211,7 @@ echo ""
 echo "============================"
 echo "  TrojanGo Account Deleted  "
 echo "============================"
-echo "Username : $user"
+echo "USERname : $USER"
 echo "Expired  : $exp"
 echo "============================"
 echo -e ""
@@ -243,7 +243,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan-go/trgo")
 		fi
 	done
 read -p "Expired (Days) : " masaaktif
-user=$(grep -E "^### " "/etc/trojan-go/trgo" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
+USER=$(grep -E "^### " "/etc/trojan-go/trgo" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/trojan-go/trgo" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
@@ -251,13 +251,13 @@ d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
-sed -i "s/### $user $exp/### $user $exp4/g" /etc/trojan-go/trgo
+sed -i "s/### $USER $exp/### $USER $exp4/g" /etc/trojan-go/trgo
 clear
 echo ""
 echo "============================"
 echo "  TrojanGo Account Renewed  "
 echo "============================"
-echo "Username : $user"
+echo "USERname : $USER"
 echo "Expired  : $exp4"
 echo "=========================="
 echo "Script Mod By SL"
@@ -286,16 +286,16 @@ echo -e "$COLOR1╰════════════════════�
 echo -e "$COLOR1╭═══════════════════════════════════════════════════╮${NC}"
 echo -e "${COLOR1}|${NC} ${WH} USERNAME ${NC}${COLOR1}|${NC}${WH}  USAGE  ${NC}${COLOR1}|${NC}${WH} LMT QUOTA ${NC}${COLOR1}|${NC}${WH} LGN IP ${NC}${COLOR1}|${NC}${WH} LMT IP ${NC}${COLOR1}|${NC}"
 echo -e "$COLOR1╠═══════════════════════════════════════════════════╣${NC}"
-for akun in "${data[@]}"
+for USER in "${data[@]}"
 do
-if [[ -z "$akun" ]]; then
-akun="tidakada"
+if [[ -z "$USER" ]]; then
+USER="tidakada"
 fi
 echo -n > /tmp/iptrojango.txt
 data2=( `cat /var/log/trojan-go/trojan-go.log | tail -n 500 | cut -d " " -f 3 | sed 's/tcp://g' | cut -d ":" -f 1 | sort | uniq`);
 for ip in "${data2[@]}"
 do
-jum=$(cat /var/log/trojan-go/trojan-go.log | grep -w "$akun" | tail -n 500 | cut -d " " -f 3 | sed 's/tcp://g' | cut -d ":" -f 1 | grep -w "$iplimit" | sort | uniq)
+jum=$(cat /var/log/trojan-go/trojan-go.log | grep -w "$USER" | tail -n 500 | cut -d " " -f 3 | sed 's/tcp://g' | cut -d ":" -f 1 | grep -w "$iplimit" | sort | uniq)
 if [[ "$jum" = "$iplimit" ]]; then
 echo "$jum" >> /tmp/iptrojango.txt
 else
@@ -308,14 +308,14 @@ jum=$(cat /tmp/iptrojango.txt)
 if [[ -z "$jum" ]]; then
 echo > /dev/null
 else
-iplimit=$(cat /etc/sfvt/limit/trojan-go/ip/${akun})
+iplimit=$(cat /etc/sfvt/limit/trojan-go/ip/${USER})
 jum2=$(cat /tmp/iptrojango.txt | wc -l)
-byte=$(cat /etc/trojan-go/${akun})
+byte=$(cat /etc/trojan-go/${USER})
 lim=$(con ${byte})
-wey=$(cat /etc/limit/trojan-go/${akun})
+wey=$(cat /etc/limit/trojan-go/${USER})
 gb=$(con ${wey})
-lastlogin=$(cat /var/log/trojan-go/trojan-go.log | grep -w "$akun" | tail -n 500 | cut -d " " -f 2 | tail -1)
-printf "${WH}%-13s %-7s %-8s %2s${NC}\n" "   ${akun} "  " ${gb}   "  "    ${lim} "      "    $jum2 IP / $iplimit IP    "
+lastlogin=$(cat /var/log/trojan-go/trojan-go.log | grep -w "$USER" | tail -n 500 | cut -d " " -f 2 | tail -1)
+printf "${WH}%-13s %-7s %-8s %2s${NC}\n" "   ${USER} "  " ${gb}   "  "    ${lim} "      "    $jum2 IP / $iplimit IP    "
 fi 
 rm -rf /tmp/iptrojango.txt
 done
@@ -331,7 +331,7 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1│ ${NC}${COLBG1}              ${WH}• TROJAN-GO PANEL MENU •           ${NC}$COLOR1 │ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═══════════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│ $NC  ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD TRGO${NC}      ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}RENEW AKUN${NC}    $COLOR1 $NC"
+echo -e "$COLOR1│ $NC  ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}ADD TRGO${NC}      ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}RENEW USER${NC}    $COLOR1 $NC"
 echo -e "$COLOR1│ $NC  ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}DELETE TRGO${NC}   ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}CHECK USER${NC}    $COLOR1 $NC"
 echo -e "$COLOR1│ $NC  ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}BACK ${NC}"
 echo -e "$COLOR1╰═══════════════════════════════════════════════════╯${NC}"

@@ -9,7 +9,7 @@ WH='\033[1;37m'
 ipsaya=$(wget -qO- ifconfig.me)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/User058/vip/main/ip"
+data_ip="https://raw.githubUSERcontent.com/USER058/vip/main/ip"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -52,22 +52,22 @@ tput cuu1
 tput dl1
 echo -ne "  \033[0;33mUpdate Domain... \033[1;37m- \033[0;33m["
 done
-echo -e "\033[0;33m]\033[1;37m -\033[1;32m Succes !\033[1;37m"
+echo -e "\033[0;33m]\033[1;37m -\033[1;32m Success !\033[1;37m"
 tput cnorm
 }
 sldns() {
-wget https://raw.githubusercontent.com./king-vpn/autoscript/main/slowdns/ && chmod +x installsl.sh && ./installsl.sh
+wget https://raw.githubUSERcontent.com./king-vpn/autoscript/main/slowdns/ && chmod +x installsl.sh && ./installsl.sh
 }
 res1() {
-wget https://raw.githubusercontent.com./king-vpn/autoscript/main/slowdns/ && chmod +x rmbl.sh && ./rmbl.sh
+wget https://raw.githubUSERcontent.com./king-vpn/autoscript/main/slowdns/ && chmod +x rmbl.sh && ./rmbl.sh
 clear
 }
 res2() {
-wget https://raw.githubusercontent.com./king-vpn/autoscript/main/slowdns/ && chmod +x rmbl1.sh && ./rmbl1.sh
+wget https://raw.githubUSERcontent.com./king-vpn/autoscript/main/slowdns/ && chmod +x rmbl1.sh && ./rmbl1.sh
 clear
 }
 res3() {
-wget https://raw.githubusercontent.com./king-vpn/autoscript/main/slowdns/ && chmod +x rmbl2.sh && ./rmbl2.sh
+wget https://raw.githubUSERcontent.com./king-vpn/autoscript/main/slowdns/ && chmod +x rmbl2.sh && ./rmbl2.sh
 clear
 }
 clear
@@ -75,8 +75,8 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1│ ${WH}Please select a your Choice to Set Domain              ${NC}"
 echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│  [ 1 ]  ${WH}Domain kamu Sendri    ${NC}"
-echo -e "$COLOR1│  [ 2 ]  ${WH}Domain Yang Punya Script     ${NC}"
+echo -e "$COLOR1│  [ 1 ]  ${WH}Personal Domain     ${NC}"
+echo -e "$COLOR1│  [ 2 ]  ${WH}Script Domain     ${NC}"
 echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
 until [[ $dns =~ ^[0-9]+$ ]]; do
 read -p "   Please select numbers 1-2 or Any Button(Random) : " dns
@@ -191,7 +191,7 @@ if [ ! -e /usr/local/bin/reboot_otomatis ]; then
 echo '#!/bin/bash' > /usr/local/bin/reboot_otomatis
 echo 'tanggal=$(date +"%m-%d-%Y")' >> /usr/local/bin/reboot_otomatis
 echo 'waktu=$(date +"%T")' >> /usr/local/bin/reboot_otomatis
-echo 'echo "Server successfully rebooted on the date of $tanggal hit $waktu." >> /etc/log-reboot.txt' >> /usr/local/bin/reboot_otomatis
+echo 'echo "Server Successsfully rebooted on the date of $tanggal hit $waktu." >> /etc/log-reboot.txt' >> /usr/local/bin/reboot_otomatis
 echo '/sbin/shutdown -r now' >> /usr/local/bin/reboot_otomatis
 chmod +x /usr/local/bin/reboot_otomatis
 fi
@@ -225,33 +225,33 @@ sleep 2
 menu
 elif test $x -eq 2; then
 echo "10 */6 * * * root /usr/local/bin/reboot_otomatis" > /etc/cron.d/reboot_otomatis
-echo "Auto-Reboot has been successfully set every 6 hours."
+echo "Auto-Reboot has been Successsfully set every 6 hours."
 sleep 2
 menu
 elif test $x -eq 3; then
 echo "10 */12 * * * root /usr/local/bin/reboot_otomatis" > /etc/cron.d/reboot_otomatis
-echo "Auto-Reboot has been successfully set every 12 hours."
+echo "Auto-Reboot has been Successsfully set every 12 hours."
 sleep 2
 menu
 elif test $x -eq 4; then
 echo -e " CONTOH FORMAT Tiap jam 5 Subuh Tulis 5 "
 read -p " Waktu Restart : " wkt
 echo "0 $wkt * * * root /usr/local/bin/reboot_otomatis" > /etc/cron.d/reboot_otomatis
-echo "Auto-Reboot has been successfully set once a day."
+echo "Auto-Reboot has been Successsfully set once a day."
 sleep 2
 menu
 elif test $x -eq 5; then
 echo -e " CONTOH FORMAT Tiap jam 8 Malam Tulis 20 "
 read -p " Waktu Restart : " wkt2
 echo "10 $wkt2 */7 * * root /usr/local/bin/reboot_otomatis" > /etc/cron.d/reboot_otomatis
-echo "Auto-Reboot has been successfully set once a week."
+echo "Auto-Reboot has been Successsfully set once a week."
 sleep 2
 menu
 elif test $x -eq 6; then
 echo -e " CONTOH FORMAT Tiap jam 10 Malam Tulis 20 "
 read -p " Waktu Restart : " wkt3
 echo "10 $wkt3 1 * * root /usr/local/bin/reboot_otomatis" > /etc/cron.d/reboot_otomatis
-echo "Auto-Reboot has been successfully set once a month."
+echo "Auto-Reboot has been Successsfully set once a month."
 sleep 2
 menu
 elif test $x -eq 7; then
@@ -266,7 +266,7 @@ menu
 elif test $x -eq 8; then
 rm -f /etc/cron.d/reboot_otomatis
 rm -f /etc/cron.d/autocpu
-echo "Auto-Reboot successfully TURNED OFF."
+echo "Auto-Reboot Successsfully TURNED OFF."
 sleep 2
 menu
 elif test $x -eq 9; then
@@ -303,7 +303,7 @@ echo -e "$COLOR1 ${NC} ${COLBG1}        ${WH}• AUTO-REBOOT •        ${NC} $C
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 echo "" > /etc/log-reboot.txt
-echo "Auto Reboot Log successfully deleted!"
+echo "Auto Reboot Log Successsfully deleted!"
 echo -e ""
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
@@ -486,7 +486,7 @@ exit
 ;;
 *)
 echo -e ""
-echo -e "Anda salah tekan"
+echo -e "Anda Select An Option"
 sleep 1
 bw
 ;;
@@ -589,7 +589,7 @@ echo -e "$COLOR1╰════════════════════�
 echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1  [ 1 ] ${WH}Buat/Edit BOT INFO Multi Login SSH, XRAY & TRANSAKSI   ${NC}"
 echo -e ""
-echo -e "$COLOR1  [ 2 ] ${WH}Buat/Edit BOT INFO Create User & Lain Lain    ${NC}"
+echo -e "$COLOR1  [ 2 ] ${WH}Buat/Edit BOT INFO Create USER & Lain Lain    ${NC}"
 echo -e ""
 echo -e "$COLOR1  [ 3 ] ${WH}Buat/Edit BOT INFO Backup Telegram    ${NC}"
 echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
@@ -606,7 +606,7 @@ echo -e ""
 echo -e "$COLOR1 [ INFO ] ${WH}Create for database Multi Login"
 read -rp "Enter Token (Creat on @BotFather) : " -e token2
 echo "$token2" > token
-read -rp "Enter Your Id (Creat on @userinfobot)  : " -e idat
+read -rp "Enter Your Id (Creat on @USERinfobot)  : " -e idat
 echo "$idat" > id
 sleep 1
 m-bot2
@@ -619,10 +619,10 @@ cd /etc/per
 touch token
 touch id
 echo -e ""
-echo -e "$COLOR1 [ INFO ] ${WH}Create for database Akun Dan Lain Lain"
+echo -e "$COLOR1 [ INFO ] ${WH}Create for database USER Dan Lain Lain"
 read -rp "Enter Token (Creat on @BotFather) : " -e token3
 echo "$token3" > token
-read -rp "Enter Your Id (Creat on @userinfobot)  : " -e idat2
+read -rp "Enter Your Id (Creat on @USERinfobot)  : " -e idat2
 echo "$idat2" > id
 sleep 1
 m-bot2
@@ -635,7 +635,7 @@ echo -e ""
 echo -e "$COLOR1 [ INFO ] ${WH}Create for database Backup Telegram"
 read -rp "Enter Token (Creat on @BotFather) : " -e token23
 echo "$token23" > /usr/bin/token
-read -rp "Enter Your Id (Creat on @userinfobot)  : " -e idchat
+read -rp "Enter Your Id (Creat on @USERinfobot)  : " -e idchat
 echo "$idchat" > /usr/bin/idchat
 sleep 1
 m-bot2
@@ -671,7 +671,7 @@ echo -e "\033[32m[Info]\033[0m Restart Webmin"
 /etc/init.d/webmin restart > /dev/null 2>&1
 rm -f /root/jcameron-key.asc > /dev/null 2>&1
 sleep 0.5
-echo -e "\033[32m[Info]\033[0m Webmin Install Successfully !"
+echo -e "\033[32m[Info]\033[0m Webmin Install Successsfully !"
 echo ""
 echo " $IP:10000"
 echo ""
@@ -691,7 +691,7 @@ echo " Restarting Webmin"
 service webmin restart > /dev/null 2>&1
 echo ""
 sleep 0.5
-echo -e "\033[32m[Info]\033[0m Webmin Start Successfully !"
+echo -e "\033[32m[Info]\033[0m Webmin Start Successsfully !"
 echo ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
@@ -712,7 +712,7 @@ sleep 0.5
 echo -e "\033[32m[Info]\033[0m Start Uninstall Webmin"
 apt autoremove --purge webmin -y > /dev/null 2>&1
 sleep 0.5
-echo -e "\033[32m[Info]\033[0m Webmin Uninstall Successfully !"
+echo -e "\033[32m[Info]\033[0m Webmin Uninstall Successsfully !"
 echo ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
@@ -814,7 +814,7 @@ echo -e " "
 cp -r /usr/local/bin/offixray /usr/local/bin/xray &> /dev/null
 chmod 755 /usr/local/bin/xray
 systemctl restart xray
-echo -e "$COLOR1 [ INFO ] ${WH}Succes Change Xray Core Official"
+echo -e "$COLOR1 [ INFO ] ${WH}Success Change Xray Core Official"
 fi
 if [[ $core == "2" ]]; then
 clear
@@ -822,7 +822,7 @@ echo -e " "
 cp -r /usr/local/bin/modxray /usr/local/bin/xray &> /dev/null
 chmod 755 /usr/local/bin/xray
 systemctl restart xray
-echo -e  "$COLOR1 [ INFO ] ${WH}Succes Change Xray Core Mod Dharak"
+echo -e  "$COLOR1 [ INFO ] ${WH}Success Change Xray Core Mod Dharak"
 fi
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
@@ -833,8 +833,8 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1│ ${WH}Please select a your Choice to Set           ${NC}"
 echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│  [ 1 ]  ${WH}INSTAL BOT CRATE AKUN DIGITAL OCEAN      ${NC}"
-echo -e "$COLOR1│  [ 2 ]  ${WH}COPY BOT CREATE AKUN DIGITAL OCEAN   ${NC}"
+echo -e "$COLOR1│  [ 1 ]  ${WH}INSTAL BOT CRATE USER DIGITAL OCEAN      ${NC}"
+echo -e "$COLOR1│  [ 2 ]  ${WH}COPY BOT CREATE USER DIGITAL OCEAN   ${NC}"
 if [[ -e /etc/cron.d/bantwidth ]]; then
 echo -ne
 else
@@ -847,7 +847,7 @@ read -p "   Please select numbers 1-3 or Any Button(BACK) : " dobot
 done
 if [[ $dobot == "1" ]]; then
 clear
-wget https://raw.githubusercontent.com/king-vpn/autoscript-vip/main/dobot/install.sh &> /dev/null
+wget https://raw.githubUSERcontent.com/king-vpn/autoscript-vip/main/dobot/install.sh &> /dev/null
 chmod +x install.sh
 bash install.sh
 rm -rf install.sh
@@ -857,7 +857,7 @@ clear
 if [[ -e /etc/dobot ]]; then
 echo -ne
 else
-echo -e " SILAHKAN INSTALL DULU BOT CREATE AKUN DIGITAL OCEAN NYA"
+echo -e " SILAHKAN INSTALL DULU BOT CREATE USER DIGITAL OCEAN NYA"
 read -n 1 -s -r -p "Press any key to back on menu"
 m-system
 fi
@@ -893,12 +893,12 @@ WorkingDirectory=/etc/dobot${dobot2}
 ExecStart=/usr/bin/python3 -m main
 Restart=always
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-USER.target
 END
 systemctl enable dobot${dobot2}
 systemctl start dobot${dobot2}
 systemctl restart dobot${dobot2}
-echo -e "SILAHKAN KETIK /start di botnya"
+echo -e "SILAHKAN Select /start di botnya"
 fi
 if [[ $dobot == "3" ]]; then
 if [[ -e /etc/cron.d/bantwidth ]]; then
@@ -906,7 +906,7 @@ echo -ne
 else
 cd
 until [[ $usagee =~ ^[0-9]+$ ]]; do
-read -p "kuota user format 1, 2 atau 3 (tera): " usagee
+read -p "kuota USER format 1, 2 atau 3 (tera): " usagee
 done
 echo "$usagee" > /etc/usagee
 cat> /etc/cron.d/bantwidth << END
@@ -924,24 +924,24 @@ menu
 function nameauthor(){
 read -rp "Input Your New Name : " -e name
 echo "$name" > /etc/profil
-read -n 1 -s -r -p " Succes Change Press Any key to Back Menu"
+read -n 1 -s -r -p " Success Change Press Any key to Back Menu"
 menu
 }
 clear
 echo -e " $COLOR1╔══════════════════════════════════════════════════════╗${NC}"
 echo -e " $COLOR1║${NC}${COLBG1}                 ${WH}• SYSTEM MENU •                      ${NC}$COLOR1║ $NC"
 echo -e " $COLOR1╚══════════════════════════════════════════════════════╝${NC}"
-echo -e " $COLOR1╔══════════════════════════════════════════════════════╗${NC}"
-echo -e " $COLOR1║${NC} ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}CHANGE DOMAIN   ${WH}    ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}CHANGE BANNER ${WH}     $COLOR1║ $NC"
-echo -e " $COLOR1║${NC} ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST   ${WH}        ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}INSTALL ADBLOCK ${WH}   $COLOR1║ $NC"
-echo -e " $COLOR1║${NC} ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}AUTO REBOOT   ${WH}      ${WH}[${COLOR1}11${WH}]${NC} ${COLOR1}• ${WH}CHANGE  BOT INFO${WH}   $COLOR1║ $NC"
-echo -e " $COLOR1║${NC} ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}CHECK BANDWITH${WH}      ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}FIX NGINX OFF${WH}      $COLOR1║ $NC"
-echo -e " $COLOR1║${NC} ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}INSTALL WEBMIN${WH}      ${WH}[${COLOR1}13${WH}]${NC} ${COLOR1}• ${WH}CEK PERFORMA VPS ${WH}  $COLOR1║ $NC"
-echo -e " $COLOR1║${NC} ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}INSTALL TCP BBR ${WH}    ${WH}[${COLOR1}14${WH}]${NC} ${COLOR1}• ${WH}CHANGE CORE MENU${WH}   $COLOR1║ $NC"
-echo -e " $COLOR1║${NC} ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}GANTI TEMA WARNA${WH}    ${WH}[${COLOR1}15${WH}]${NC} ${COLOR1}• ${WH}BOT DO MENU ${WH}       $COLOR1║ $NC"
-echo -e " $COLOR1║${NC} ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}LIMIT SPEED${WH}         ${WH}[${COLOR1}16${WH}]${NC} ${COLOR1}• ${WH}GANTI NAMA CLIENT${WH}  $COLOR1║ $NC"
-echo -e " $COLOR1║${NC} ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK $NC            ${WH}[${COLOR1}99${WH}]${NC} ${COLOR1}• ${WH}CLEAR RAM CACHE ${WH}   $COLOR1║ $NC"
-echo -e " $COLOR1╚══════════════════════════════════════════════════════╝${NC}"
+echo -e " $COLOR1╔═══════════════════════════════════════════════════════════╗${NC}"
+echo -e " $COLOR1║${NC} ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}CHANGE DOMAIN   ${WH}    ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}CHANGE BANNER ${WH}          $COLOR1║ $NC"
+echo -e " $COLOR1║${NC} ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}SPEEDTEST   ${WH}        ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}INSTALL ADBLOCK ${WH}        $COLOR1║ $NC"
+echo -e " $COLOR1║${NC} ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}AUTO REBOOT   ${WH}      ${WH}[${COLOR1}11${WH}]${NC} ${COLOR1}• ${WH}CHANGE  BOT INFO${WH}        $COLOR1║ $NC"
+echo -e " $COLOR1║${NC} ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}CHECK BANDWITH${WH}      ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}FIX NGINX OFF${WH}           $COLOR1║ $NC"
+echo -e " $COLOR1║${NC} ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}INSTALL WEBMIN${WH}      ${WH}[${COLOR1}13${WH}]${NC} ${COLOR1}• ${WH}CHECK VPS PERFORMANCE ${WH}  $COLOR1║ $NC"
+echo -e " $COLOR1║${NC} ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}INSTALL TCP BBR ${WH}    ${WH}[${COLOR1}14${WH}]${NC} ${COLOR1}• ${WH}CHANGE CORE MENU${WH}        $COLOR1║ $NC"
+echo -e " $COLOR1║${NC} ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}CHANGE COLOR THEME${WH}  ${WH}[${COLOR1}15${WH}]${NC} ${COLOR1}• ${WH}BOT DO MENU ${WH}            $COLOR1║ $NC"
+echo -e " $COLOR1║${NC} ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}LIMIT SPEED${WH}         ${WH}[${COLOR1}16${WH}]${NC} ${COLOR1}• ${WH}CANGE CLIENTS NAME${WH}      $COLOR1║ $NC"
+echo -e " $COLOR1║${NC} ${WH}[${COLOR1}00${WH}]${NC} ${COLOR1}• ${WH}GO BACK $NC            ${WH}[${COLOR1}99${WH}]${NC} ${COLOR1}• ${WH}CLEAR RAM CACHE ${WH}        $COLOR1║ $NC"
+echo -e " $COLOR1╚═══════════════════════════════════════════════════════════╝${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
 case $opt in
@@ -963,5 +963,5 @@ case $opt in
 16 |16) clear ; nameauthor ; exit ;;
 99 |99) clear ; clearcache ; exit ;;
 00 |0) clear ; menu ; exit ;;
-*) echo -e "" ; echo "Anda salah tekan" ; sleep 1 ; m-system ;;
+*) echo -e "" ; echo "Please Select An Option " ; sleep 1 ; m-system ;;
 esac

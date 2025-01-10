@@ -2,7 +2,7 @@
 ipsaya=$(curl -sS ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/User058/vip/main/ip"
+data_ip="https://raw.githubUSERcontent.com/USER058/vip/main/ip"
 checking_sc() {
     useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
     if [[ $date_list < $useexp ]]; then
@@ -36,13 +36,13 @@ apt install python3-pip
 sudo apt-get install -y p7zip-full
 cd /usr/bin
 clear
-wget https://raw.githubusercontent.com/king-vpn/autoscript-vip/main/bot/bot.zip
+wget https://raw.githubUSERcontent.com/king-vpn/autoscript-vip/main/bot/bot.zip
 unzip bot.zip
 mv bot/* /usr/bin
 chmod +x /usr/bin/*
 rm -rf bot.zip
 clear
-wget https://raw.githubusercontent.com/king-vpn/autoscript-vip/main/bot/kyt.zip
+wget https://raw.githubUSERcontent.com/king-vpn/autoscript-vip/main/bot/kyt.zip
 unzip kyt.zip
 pip3 install -r kyt/requirements.txt
 clear
@@ -121,7 +121,7 @@ ExecStart=/usr/bin/python3 -m kyt
 Restart=on-failure
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-USER.target
 END
 
 systemctl daemon-reload &> /dev/null
@@ -129,13 +129,13 @@ systemctl enable kyt &> /dev/null
 systemctl start kyt &> /dev/null
 systemctl restart kyt &> /dev/null
 
-wget -q -O /usr/bin/addtrgo "https://raw.githubusercontent.com/king-vpn/autoscript-vip/main/trgo/addtrgo.sh" && chmod +x /usr/bin/addtrgo
+wget -q -O /usr/bin/addtrgo "https://raw.githubUSERcontent.com/king-vpn/autoscript-vip/main/trgo/addtrgo.sh" && chmod +x /usr/bin/addtrgo
 
-wget -q -O /usr/bin/deltrgo "https://raw.githubusercontent.com/king-vpn/autoscript-vip/main/trgo/deltrgo.sh" && chmod +x /usr/bin/deltrgo
+wget -q -O /usr/bin/deltrgo "https://raw.githubUSERcontent.com/king-vpn/autoscript-vip/main/trgo/deltrgo.sh" && chmod +x /usr/bin/deltrgo
 
-wget -q -O /usr/bin/cektrgo "https://raw.githubusercontent.com/king-vpn/autoscript-vip/main/trgo/cektrgo.sh" && chmod +x /usr/bin/cektrgo
+wget -q -O /usr/bin/cektrgo "https://raw.githubUSERcontent.com/king-vpn/autoscript-vip/main/trgo/cektrgo.sh" && chmod +x /usr/bin/cektrgo
 
-wget -q -O /usr/bin/renewtrgo "https://raw.githubusercontent.com/king-vpn/autoscript-vip/main/trgo/renewtrgo.sh" && chmod +x /usr/bin/renewtrgo
+wget -q -O /usr/bin/renewtrgo "https://raw.githubUSERcontent.com/king-vpn/autoscript-vip/main/trgo/renewtrgo.sh" && chmod +x /usr/bin/renewtrgo
 
 echo "Done"
 echo " Installations complete, type /menu on your bot"
@@ -202,7 +202,7 @@ ExecStart=/usr/bin/python3 -m kyt
 Restart=on-failure
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-USER.target
 END
 
 systemctl daemon-reload &> /dev/null
@@ -223,13 +223,13 @@ rm -rf /usr/bin/kyt.zip
 rm -rf /usr/bin/kyt
 sleep 2
 cd /usr/bin
-wget https://raw.githubusercontent.com/king-vpn/autoscript-vip/main/bot/bot.zip
+wget https://raw.githubUSERcontent.com/king-vpn/autoscript-vip/main/bot/bot.zip
 unzip bot.zip
 mv bot/* /usr/bin
 chmod +x /usr/bin/*
 rm -rf bot.zip
 clear
-wget https://raw.githubusercontent.com/king-vpn/autoscript-vip/main/bot/kyt.zip
+wget https://raw.githubUSERcontent.com/king-vpn/autoscript-vip/main/bot/kyt.zip
 unzip kyt.zip
 cd kyt
 pip3 install -r kyt/requirements.txt
@@ -249,7 +249,7 @@ systemctl enable kyt &> /dev/null
 systemctl start kyt &> /dev/null
 systemctl restart kyt &> /dev/null
 clear
-echo -e "Succes Update BOT Telegram"
+echo -e "Success Update BOT Telegram"
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 fi
@@ -257,7 +257,7 @@ fi
 if [[ $domain2 == "3" ]]; then
 clear
 rm -rf /usr/bin/kyt
-echo -e "Succes Delete BOT Telegram"
+echo -e "Success Delete BOT Telegram"
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 fi
@@ -269,7 +269,7 @@ echo -e "$COLOR1 ${NC} ${COLBG1}                ${WH}• BOT PANEL •          
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
 echo -e "${grenbo}Ini digunakan jika Mau memakai 1bot saja tanpa perlu ${NC}"
-echo -e "${grenbo}memakai banyak bot create ini digunakan untuk create akun ${NC}"
+echo -e "${grenbo}memakai banyak bot create ini digunakan untuk create USER ${NC}"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 echo -e ""
 read -e -p "[*] Input Nama Panggilan Botnya : " namabot
@@ -305,9 +305,9 @@ sed -i "s/"menu"/"${namabot}"/g" /usr/bin/kyt/modules/ssh.py
 sed -i "s/"menu"/"${namabot}"/g" /usr/bin/kyt/modules/menu.py
 
 clear
-echo -e "Succes Ganti Nama Panggilan BOT Telegram"
-echo -e "Kalau Mau Panggil Menu botnya Ketik .${namabot} atau /${namabot}"
-echo -e "Kalau Mau Panggil Start botnya Ketik .start${namabot} atau /start${namabot}"
+echo -e "Success Ganti Nama Panggilan BOT Telegram"
+echo -e "Kalau Mau Panggil Menu botnya Select .${namabot} atau /${namabot}"
+echo -e "Kalau Mau Panggil Start botnya Select .start${namabot} atau /start${namabot}"
 systemctl restart kyt
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
@@ -320,17 +320,17 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1 ${NC} ${COLBG1}                ${WH}• BOT PANEL •                  ${NC} $COLOR1 $NC"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 echo -e ""
-read -e -p "[*] Input ID Usernya : " user
-userke=$(cat /usr/bin/kyt/var.txt | wc -l)
-sed -i '/(ADMIN,))/a hello	c.execute("INSERT INTO admin (user_id) VALUES (?)",(USER'""$userke""',))' /usr/bin/kyt/__init__.py
+read -e -p "[*] Input ID USERnya : " USER
+USERke=$(cat /usr/bin/kyt/var.txt | wc -l)
+sed -i '/(ADMIN,))/a hello	c.execute("INSERT INTO admin (USER_id) VALUES (?)",(USER'""$USERke""',))' /usr/bin/kyt/__init__.py
 cat >>/usr/bin/kyt/var.txt <<EOF
-USER${userke}="$user"
+USER${USERke}="$USER"
 EOF
 sed -i "s/hello//g" /usr/bin/kyt/__init__.py
 
-echo 'curl -s --max-time $TIMES -d "chat_id='""$user""'&disable_web_page_preview=1&text=$TEXT&parse_mode=html" https://api.telegram.org/bot$KEY/sendMessage >/dev/null' >> /etc/tele
+echo 'curl -s --max-time $TIMES -d "chat_id='""$USER""'&disable_web_page_preview=1&text=$TEXT&parse_mode=html" https://api.telegram.org/bot$KEY/sendMessage >/dev/null' >> /etc/tele
 clear
-echo -e "Succes TAMBAH Admin BOT Telegram"
+echo -e "Success TAMBAH Admin BOT Telegram"
 rm -rf /usr/bin/ddsdswl.session
 rm -rf /usr/bin/kyt/database.db
 systemctl restart kyt 

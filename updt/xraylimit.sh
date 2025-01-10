@@ -9,7 +9,7 @@ WH='\033[1;37m'
 ipsaya=$(wget -qO- ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/User058/vip/main/ip"
+data_ip="https://raw.githubUSERcontent.com/USER058/vip/main/ip"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -116,50 +116,50 @@ fi
 done <<<"${logvm}"
 done
 if [[ ${splvm} != "" ]]; then
-for vmuser in ${vm[@]}; do
-vmhas=$(cat /tmp/vm | grep -w "${vmuser}" | wc -l)
-vmhas2=$(cat /tmp/vm | grep -w "${vmuser}" | cut -d ' ' -f 2-8 | nl -s '. ' | while read line; do printf "%-20s\n" "$line"; done )
-vmsde=$(ls "/etc/vmess" | grep -w "${vmuser}IP")
+for vmUSER in ${vm[@]}; do
+vmhas=$(cat /tmp/vm | grep -w "${vmUSER}" | wc -l)
+vmhas2=$(cat /tmp/vm | grep -w "${vmUSER}" | cut -d ' ' -f 2-8 | nl -s '. ' | while read line; do printf "%-20s\n" "$line"; done )
+vmsde=$(ls "/etc/vmess" | grep -w "${vmUSER}IP")
 if [[ -z ${vmsde} ]]; then
 vmip="0"
 else
-vmip=$(cat /etc/vmess/${vmuser}IP)
+vmip=$(cat /etc/vmess/${vmUSER}IP)
 fi
 if [[ ${vmhas} -gt "0" ]]; then
-downlink=$(xray api stats --server=127.0.0.1:10085 -name "user>>>${vmuser}>>>traffic>>>downlink" | grep -w "value" | awk '{print $2}' | cut -d '"' -f2)
+downlink=$(xray api stats --server=127.0.0.1:10085 -name "USER>>>${vmUSER}>>>traffic>>>downlink" | grep -w "value" | awk '{print $2}' | cut -d '"' -f2)
 cd
-if [ ! -e /etc/limit/vmess/${vmuser} ]; then
-echo "${downlink}" > /etc/limit/vmess/${vmuser}
-xray api stats --server=127.0.0.1:10085 -name "user>>>${vmuser}>>>traffic>>>downlink" -reset > /dev/null 2>&1
+if [ ! -e /etc/limit/vmess/${vmUSER} ]; then
+echo "${downlink}" > /etc/limit/vmess/${vmUSER}
+xray api stats --server=127.0.0.1:10085 -name "USER>>>${vmUSER}>>>traffic>>>downlink" -reset > /dev/null 2>&1
 else
-plus2=$(cat /etc/limit/vmess/${vmuser})
+plus2=$(cat /etc/limit/vmess/${vmUSER})
 if [[ -z ${plus2} ]]; then
-echo "1" > /etc/limit/vmess/${vmuser}
+echo "1" > /etc/limit/vmess/${vmUSER}
 fi
 plus3=$(( ${downlink} + ${plus2} ))
-echo "${plus3}" > /etc/limit/vmess/${vmuser}
-xray api stats --server=127.0.0.1:10085 -name "user>>>${vmuser}>>>traffic>>>downlink" -reset > /dev/null 2>&1
+echo "${plus3}" > /etc/limit/vmess/${vmUSER}
+xray api stats --server=127.0.0.1:10085 -name "USER>>>${vmUSER}>>>traffic>>>downlink" -reset > /dev/null 2>&1
 fi
-if [ ! -e /etc/vmess/${vmuser} ]; then
-echo "999999999999" > /etc/vmess/${vmuser}
+if [ ! -e /etc/vmess/${vmUSER} ]; then
+echo "999999999999" > /etc/vmess/${vmUSER}
 fi
-limit=$(cat /etc/vmess/${vmuser})
-usage=$(cat /etc/limit/vmess/${vmuser})
+limit=$(cat /etc/vmess/${vmUSER})
+usage=$(cat /etc/limit/vmess/${vmUSER})
 if [ $usage -gt $limit ]; then
-exp=$(grep -wE "^#vmg $vmuser" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-uuid=$(grep -wE "^#vmg $vmuser" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
-echo "### $vmuser $exp $uuid" >> /etc/vmess/userQuota
-sed -i "/^#vmg $vmuser $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#vm $vmuser $exp/,/^},{/d" /etc/xray/config.json
-rm /etc/limit/vmess/${vmuser} >/dev/null 2>&1
+exp=$(grep -wE "^#vmg $vmUSER" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+uuid=$(grep -wE "^#vmg $vmUSER" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
+echo "### $vmUSER $exp $uuid" >> /etc/vmess/USERQuota
+sed -i "/^#vmg $vmUSER $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#vm $vmUSER $exp/,/^},{/d" /etc/xray/config.json
+rm /etc/limit/vmess/${vmUSER} >/dev/null 2>&1
 systemctl restart xray
 fi
 fi
 if [[ ${vmhas} -gt $vmip ]]; then
-byt=$(cat /etc/limit/vmess/$vmuser)
+byt=$(cat /etc/limit/vmess/$vmUSER)
 gb=$(convert ${byt})
-echo "$vmuser ${vmhas}" >> /etc/vmess/${vmuser}login
-vmessip=$(cat /etc/vmess/${vmuser}login | wc -l)
+echo "$vmUSER ${vmhas}" >> /etc/vmess/${vmUSER}login
+vmessip=$(cat /etc/vmess/${vmUSER}login | wc -l)
 ssvmess1=$(ls "/etc/vmess" | grep -w "notif")
 if [[ -z ${ssvmess1} ]]; then
 ssvmess="3"
@@ -176,7 +176,7 @@ TEXT2="
 <b>ISP : ${ISP}</b>
 <b>CITY : ${CITY}</b>
 <b>DATE LOGIN : $DATE</b>
-<b>USERNAME : $vmuser </b>
+<b>USERNAME : $vmUSER </b>
 <b>TOTAL LOGIN IP : ${vmhas} </b>
 <b>USAGE : ${gb} </b>
 <code>◇━━━━━━━━━━━━━━◇</code>
@@ -187,18 +187,18 @@ TEXT2="
 <i>${ssvmess}x Multi Login Lock Account $waktulock Minutes...</i>
 "
 echo "" > /tmp/vm
-sed -i "/${vmuser}/d" /var/log/xray/access.log
+sed -i "/${vmUSER}/d" /var/log/xray/access.log
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT2&parse_mode=html" $URL >/dev/null
-exp=$(grep -wE "^#vmg $vmuser" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-uuid=$(grep -wE "^#vmg $vmuser" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
-echo "### $vmuser $exp $uuid" >> /etc/vmess/listlock
-sed -i "/^#vmg $vmuser $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#vm $vmuser $exp/,/^},{/d" /etc/xray/config.json
-rm /etc/vmess/${vmuser}login >/dev/null 2>&1
-cat> /etc/cron.d/vmess${vmuser} << EOF
+exp=$(grep -wE "^#vmg $vmUSER" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+uuid=$(grep -wE "^#vmg $vmUSER" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
+echo "### $vmUSER $exp $uuid" >> /etc/vmess/listlock
+sed -i "/^#vmg $vmUSER $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#vm $vmUSER $exp/,/^},{/d" /etc/xray/config.json
+rm /etc/vmess/${vmUSER}login >/dev/null 2>&1
+cat> /etc/cron.d/vmess${vmUSER} << EOF
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-*/$waktulock * * * * root /usr/bin/xray vmess $vmuser $uuid $exp
+*/$waktulock * * * * root /usr/bin/xray vmess $vmUSER $uuid $exp
 EOF
 systemctl restart xray
 service cron restart
@@ -212,7 +212,7 @@ TEXT2="
 <b>ISP : ${ISP}</b>
 <b>CITY : ${CITY}</b>
 <b>DATE LOGIN : $DATE</b>
-<b>USERNAME : $vmuser </b>
+<b>USERNAME : $vmUSER </b>
 <b>TOTAL LOGIN IP : ${vmhas} </b>
 <b>USAGE : ${gb} </b>
 <code>◇━━━━━━━━━━━━━━◇</code>
@@ -223,14 +223,14 @@ TEXT2="
 <i>${ssvmess}x Multi Login Auto Lock Account...</i>
 "
 echo "" > /tmp/vm
-sed -i "/${vmuser}/d" /var/log/xray/access.log
+sed -i "/${vmUSER}/d" /var/log/xray/access.log
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT2&parse_mode=html" $URL >/dev/null
-exp=$(grep -wE "^#vmg $vmuser" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-uuid=$(grep -wE "^#vmg $vmuser" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
-echo "### $vmuser $exp $uuid" >> /etc/vmess/listlock
-sed -i "/^#vmg $vmuser $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#vm $vmuser $exp/,/^},{/d" /etc/xray/config.json
-rm /etc/vmess/${vmuser}login >/dev/null 2>&1
+exp=$(grep -wE "^#vmg $vmUSER" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+uuid=$(grep -wE "^#vmg $vmUSER" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
+echo "### $vmUSER $exp $uuid" >> /etc/vmess/listlock
+sed -i "/^#vmg $vmUSER $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#vm $vmUSER $exp/,/^},{/d" /etc/xray/config.json
+rm /etc/vmess/${vmUSER}login >/dev/null 2>&1
 systemctl restart xray
 fi
 else
@@ -242,7 +242,7 @@ TEXT="
 <b>ISP : ${ISP}</b>
 <b>CITY : ${CITY}</b>
 <b>DATE LOGIN : $DATE</b>
-<b>USERNAME : $vmuser </b>
+<b>USERNAME : $vmUSER </b>
 <b>TOTAL LOGIN IP : ${vmhas} </b>
 <b>USAGE : ${gb} </b>
 <code>◇━━━━━━━━━━━━━━◇</code>
@@ -253,16 +253,16 @@ TEXT="
 <i>${vmessip}x Multi Login : ${ssvmess}x Multi Login Auto Lock Account...</i>
 "
 echo "" > /tmp/vm
-sed -i "/${vmuser}/d" /var/log/xray/access.log
+sed -i "/${vmUSER}/d" /var/log/xray/access.log
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 fi
 if [ $vmessip -gt $ssvmess ]; then
-exp=$(grep -wE "^#vmg $vmuser" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-uuid=$(grep -wE "^#vmg $vmuser" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
-echo "### $vmuser $exp $uuid" >> /etc/vmess/listlock
-sed -i "/^#vmg $vmuser $exp/,/^},{/d" /etc/xray/config.json
-sed -i "/^#vm $vmuser $exp/,/^},{/d" /etc/xray/config.json
-rm /etc/vmess/${vmuser}login >/dev/null 2>&1
+exp=$(grep -wE "^#vmg $vmUSER" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+uuid=$(grep -wE "^#vmg $vmUSER" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
+echo "### $vmUSER $exp $uuid" >> /etc/vmess/listlock
+sed -i "/^#vmg $vmUSER $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#vm $vmUSER $exp/,/^},{/d" /etc/xray/config.json
+rm /etc/vmess/${vmUSER}login >/dev/null 2>&1
 systemctl restart xray
 fi
 fi
@@ -309,11 +309,11 @@ else
 vmip=$(cat /etc/vless/${vlus}IP)
 fi
 if [[ ${vlsss} -gt "0" ]]; then
-downlink=$(xray api stats --server=127.0.0.1:10085 -name "user>>>${vlus}>>>traffic>>>downlink" | grep -w "value" | awk '{print $2}' | cut -d '"' -f2)
+downlink=$(xray api stats --server=127.0.0.1:10085 -name "USER>>>${vlus}>>>traffic>>>downlink" | grep -w "value" | awk '{print $2}' | cut -d '"' -f2)
 cd
 if [ ! -e /etc/limit/vless/${vlus} ]; then
 echo "${downlink}" > /etc/limit/vless/${vlus}
-xray api stats --server=127.0.0.1:10085 -name "user>>>${vlus}>>>traffic>>>downlink" -reset > /dev/null 2>&1
+xray api stats --server=127.0.0.1:10085 -name "USER>>>${vlus}>>>traffic>>>downlink" -reset > /dev/null 2>&1
 else
 plus2=$(cat /etc/limit/vless/${vlus})
 cd
@@ -322,7 +322,7 @@ echo "1" > /etc/limit/vless/${vlus}
 fi
 plus3=$(( ${downlink} + ${plus2} ))
 echo "${plus3}" > /etc/limit/vless/${vlus}
-xray api stats --server=127.0.0.1:10085 -name "user>>>${vlus}>>>traffic>>>downlink" -reset > /dev/null 2>&1
+xray api stats --server=127.0.0.1:10085 -name "USER>>>${vlus}>>>traffic>>>downlink" -reset > /dev/null 2>&1
 fi
 cd
 if [ ! -e /etc/vless/${vlus} ]; then
@@ -333,7 +333,7 @@ usage=$(cat /etc/limit/vless/${vlus})
 if [ $usage -gt $limit ]; then
 expvl=$(grep -wE "^#vl $vlus" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
 uuidvl=$(grep -wE "^#vl $vlus" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
-echo "### $vlus $expvl $uuidvl" >> /etc/vless/userQuota
+echo "### $vlus $expvl $uuidvl" >> /etc/vless/USERQuota
 sed -i "/^#vl $vlus $expvl/,/^},{/d" /etc/xray/config.json
 sed -i "/^#vlg $vlus $expvl/,/^},{/d" /etc/xray/config.json
 rm /etc/limit/vless/${vlus} >/dev/null 2>&1
@@ -495,11 +495,11 @@ else
 sadsde=$(cat /etc/trojan/${usrtr}IP)
 fi
 if [[ ${trip} -gt "0" ]]; then
-downlink=$(xray api stats --server=127.0.0.1:10085 -name "user>>>${usrtr}>>>traffic>>>downlink" | grep -w "value" | awk '{print $2}' | cut -d '"' -f2)
+downlink=$(xray api stats --server=127.0.0.1:10085 -name "USER>>>${usrtr}>>>traffic>>>downlink" | grep -w "value" | awk '{print $2}' | cut -d '"' -f2)
 cd
 if [ ! -e /etc/limit/trojan/$usrtr ]; then
 echo "${downlink}" > /etc/limit/trojan/${usrtr}
-xray api stats --server=127.0.0.1:10085 -name "user>>>${usrtr}>>>traffic>>>downlink" -reset > /dev/null 2>&1
+xray api stats --server=127.0.0.1:10085 -name "USER>>>${usrtr}>>>traffic>>>downlink" -reset > /dev/null 2>&1
 else
 plus2=$(cat /etc/limit/trojan/$usrtr)
 if [[ -z ${plus2} ]]; then
@@ -507,7 +507,7 @@ echo "1" > /etc/limit/trojan/$usrtr
 fi
 plus3=$(( ${downlink} + ${plus2} ))
 echo "${plus3}" > /etc/limit/trojan/${usrtr}
-xray api stats --server=127.0.0.1:10085 -name "user>>>${usrtr}>>>traffic>>>downlink" -reset > /dev/null 2>&1
+xray api stats --server=127.0.0.1:10085 -name "USER>>>${usrtr}>>>traffic>>>downlink" -reset > /dev/null 2>&1
 fi
 if [ ! -e /etc/trojan/${usrtr} ]; then
 echo "999999999999" > /etc/trojan/${usrtr}
@@ -517,7 +517,7 @@ usage=$(cat /etc/limit/trojan/${usrtr})
 if [ $usage -gt $limit ]; then
 exptr=$(grep -wE "^#tr $usrtr" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
 uuidtr=$(grep -wE "^#tr $usrtr" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
-echo "### $usrtr $exptr $uuidtr" >> /etc/trojan/userQuota
+echo "### $usrtr $exptr $uuidtr" >> /etc/trojan/USERQuota
 sed -i "/^#tr $usrtr $exptr/,/^},{/d" /etc/xray/config.json
 sed -i "/^#trg $usrtr $exptr/,/^},{/d" /etc/xray/config.json
 rm /etc/limit/trojan/${usrtr} >/dev/null 2>&1
@@ -680,11 +680,11 @@ else
 sadsde=$(cat /etc/trojan-go/${usrtr}IP)
 fi
 if [[ ${trip} -gt "0" ]]; then
-downlink=$(xray api stats --server=127.0.0.1:10085 -name "user>>>${usrtr}>>>traffic>>>downlink" | grep -w "value" | awk '{print $2}' | cut -d '"' -f2)
+downlink=$(xray api stats --server=127.0.0.1:10085 -name "USER>>>${usrtr}>>>traffic>>>downlink" | grep -w "value" | awk '{print $2}' | cut -d '"' -f2)
 cd
 if [ ! -e /etc/limit/trojan-go/$usrtr ]; then
 echo "${downlink}" > /etc/limit/trojan-go/${usrtr}
-xray api stats --server=127.0.0.1:10085 -name "user>>>${usrtr}>>>traffic>>>downlink" -reset > /dev/null 2>&1
+xray api stats --server=127.0.0.1:10085 -name "USER>>>${usrtr}>>>traffic>>>downlink" -reset > /dev/null 2>&1
 else
 plus2=$(cat /etc/limit/trojan-go/$usrtr)
 if [[ -z ${plus2} ]]; then
@@ -692,7 +692,7 @@ echo "1" > /etc/limit/trojan-go/$usrtr
 fi
 plus3=$(( ${downlink} + ${plus2} ))
 echo "${plus3}" > /etc/limit/trojan-go/${usrtr}
-xray api stats --server=127.0.0.1:10085 -name "user>>>${usrtr}>>>traffic>>>downlink" -reset > /dev/null 2>&1
+xray api stats --server=127.0.0.1:10085 -name "USER>>>${usrtr}>>>traffic>>>downlink" -reset > /dev/null 2>&1
 fi
 if [ ! -e /etc/trojan-go/${usrtr} ]; then
 echo "999999999999" > /etc/trojan-go/${usrtr}
@@ -702,7 +702,7 @@ usage=$(cat /etc/limit/trojan-go/${usrtr})
 if [ $usage -gt $limit ]; then
 exptr=$(grep -wE "^#tr $usrtr" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
 uuidtr=$(grep -wE "^#tr $usrtr" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
-echo "### $usrtr $exptr $uuidtr" >> /etc/trojan-go/userQuota
+echo "### $usrtr $exptr $uuidtr" >> /etc/trojan-go/USERQuota
 sed -i "/^#tr $usrtr $exptr/,/^},{/d" /etc/xray/config.json
 sed -i "/^#trg $usrtr $exptr/,/^},{/d" /etc/xray/config.json
 rm /etc/limit/trojan-go/${usrtr} >/dev/null 2>&1

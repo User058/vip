@@ -14,12 +14,12 @@ ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
 author=$(cat /etc/profil)
 DATE2=$(date -R | cut -d " " -f -5)
-Exp2=$(curl -sS https://raw.githubusercontent.com/User058/vip/main/ip | grep $MYIP | awk '{print $3}')
+Exp2=$(curl -sS https://raw.githubUSERcontent.com/USER058/vip/main/ip | grep $MYIP | awk '{print $3}')
 export RED='\033[0;31m'
 export GREEN='\033[0;32m'
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/User058/vip/main/ip"
+data_ip="https://raw.githubUSERcontent.com/USER058/vip/main/ip"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $MYIP | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -216,9 +216,9 @@ if [[ -e /etc/github/api ]]; then
 m-ip
 else
 mkdir /etc/github
-echo "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" > /etc/github/api
-echo "hannaugo@gmail.com" > /etc/github/email
-echo "king-vpn" > /etc/github/username
+echo "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" > /etc/github/api
+echo "vojokeeith@gmail.com" > /etc/github/email
+echo "USER058" > /etc/github/USERname
 m-ip
 fi
 }
@@ -232,10 +232,10 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1  ${WH}Please select a Bot type below                 ${NC}"
 echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1  [ 1 ] ${WH}Buat/Edit BOT INFO Multi Login SSH, XRAY & TRANSAKSI   ${NC}"
-echo -e "$COLOR1  [ 2 ] ${WH}Buat/Edit BOT INFO Create User & Lain Lain    ${NC}"
+echo -e "$COLOR1  [ 1 ] ${WH}Create/Edit BOT INFO Multi Login SSH, XRAY   ${NC}"
+echo -e "$COLOR1  [ 2 ] ${WH}Create/Edit BOT INFO Create USER & Other    ${NC}"
 echo -e ""
-echo -e "$COLOR1  [ 3 ] ${WH}Buat/Edit BOT INFO Backup Telegram    ${NC}"
+echo -e "$COLOR1  [ 3 ] ${WH}Create/Edit BOT INFO Backup Telegram    ${NC}"
 echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
 read -p "   Please select numbers 1-3 or Any Button(Random) to exit : " bot
 echo ""
@@ -250,7 +250,7 @@ echo -e ""
 echo -e "$COLOR1 [ INFO ] ${WH}Create for database Multi Login"
 read -rp "Enter Token (Creat on @BotFather) : " -e token2
 echo "$token2" > token
-read -rp "Enter Your Id (Creat on @userinfobot)  : " -e idat
+read -rp "Enter Your Id (Creat on @USERinfobot)  : " -e idat
 echo "$idat" > id
 sleep 1
 m-bot2
@@ -263,10 +263,10 @@ cd /etc/per
 touch token
 touch id
 echo -e ""
-echo -e "$COLOR1 [ INFO ] ${WH}Create for database Akun Dan Lain Lain"
+echo -e "$COLOR1 [ INFO ] ${WH}Create for database USER Dan Lain Lain"
 read -rp "Enter Token (Creat on @BotFather) : " -e token3
 echo "$token3" > token
-read -rp "Enter Your Id (Creat on @userinfobot)  : " -e idat2
+read -rp "Enter Your Id (Creat on @USERinfobot)  : " -e idat2
 echo "$idat2" > id
 sleep 1
 m-bot2
@@ -279,7 +279,7 @@ echo -e ""
 echo -e "$COLOR1 [ INFO ] ${WH}Create for database Backup Telegram"
 read -rp "Enter Token (Creat on @BotFather) : " -e token23
 echo "$token23" > /usr/bin/token
-read -rp "Enter Your Id (Creat on @userinfobot)  : " -e idchat
+read -rp "Enter Your Id (Creat on @USERinfobot)  : " -e idchat
 echo "$idchat" > /usr/bin/idchat
 sleep 1
 m-bot2
@@ -290,7 +290,7 @@ clear
 clear && clear && clear
 clear;clear;clear
 echo -e " $COLOR1╭══════════════════════════════════════════════════════════╮${NC}"
-echo -e " $COLOR1│${NC} ${COLBG1}               ${WH} •  STORES  PREMIUM •             ${NC} $COLOR1│ $NC"
+echo -e " $COLOR1│${NC} ${COLBG1}               ${WH} •  STORES  PREMIUM •                    ${NC} $COLOR1│ $NC"
 echo -e " $COLOR1╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e " $COLOR1╭══════════════════════════════════════════════════════════╮${NC}"
 echo -e " $COLOR1│$NC${WH} ❈ OS            ${COLOR1}: ${WH}$MODEL2${NC}"
@@ -301,7 +301,6 @@ echo -e " $COLOR1│$NC${WH} ❈ ISP           ${COLOR1}: ${WH}$ISP${NC}"
 echo -e " $COLOR1│$NC${WH} ❈ City          ${COLOR1}: ${WH}$CITY${NC}"
 echo -e " $COLOR1│$NC${WH} ❈ IP VPS        ${COLOR1}: ${WH}$MYIP${NC}"
 echo -e " $COLOR1│$NC${WH} ❈ DOMAIN        ${COLOR1}: ${WH}$(cat /etc/xray/domain)"
-echo -e " $COLOR1│$NC${WH} ❈ NSDomain      ${COLOR1}: ${WH}$(cat /etc/xray/dns)"
 echo -e " $COLOR1╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e "    $COLOR1╭═════════════════ • ${NC}${WH}STATUS SERVER${NC}${COLOR1} • ═══════════════╮${NC}"
 echo -e "     ${WH} SSH WS : ${status_ws} ${WH} XRAY : ${status_xray} ${WH} NGINX : ${status_nginx} ${WH} DROPBEAR : ${status_beruangjatuh}$NC"
@@ -316,16 +315,16 @@ printf "                \033[1;37m%-16s ${COLOR1}%-4s${NC} ${WH}%-5s\e[0m\n" " N
 printf "                \033[1;37m%-16s ${COLOR1}%-4s${NC} ${WH}%-5s\e[0m\n" " TROJAN-GO   =" "$jumlah_trgo" "ACCOUNT "
 echo -e "      $COLOR1╰═════════════════════════════════════════════╯${NC}"
 echo -e " $COLOR1╭═════════════════════ • ${WH}LIST MENU${NC}${COLOR1} • ════════════════════╮${NC}"
-echo -e " $COLOR1│$NC ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}SSH-WS    ${WH}[${COLOR1}Menu${WH}]   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}BOT PANEL  ${WH}[${COLOR1}Menu${WH}] $COLOR1│${NC}"
-echo -e " $COLOR1│$NC ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}VMESS     ${WH}[${COLOR1}Menu${WH}]   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}BOT NOTIF  ${WH}[${COLOR1}Menu${WH}] $COLOR1│${NC}"    
-echo -e " $COLOR1│$NC ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}VLESS     ${WH}[${COLOR1}Menu${WH}]   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}UPDATE     ${WH}[${COLOR1}Menu${WH}] $COLOR1│${NC}"   
-echo -e " $COLOR1│$NC ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}TROJAN    ${WH}[${COLOR1}Menu${WH}]   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}SYSTEM     ${WH}[${COLOR1}Menu${WH}] $COLOR1│${NC}" 
-echo -e " $COLOR1│$NC ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}NOOBZVPNS ${WH}[${COLOR1}Menu${WH}]   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}11${WH}]${NC} ${COLOR1}• ${WH}BACKUP     ${WH}[${COLOR1}Menu${WH}] $COLOR1│${NC}" 
-echo -e " $COLOR1│$NC ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}TROJAN-GO ${WH}[${COLOR1}Menu${WH}]   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}REBOOT     ${WH}[${COLOR1}Menu${WH}] $COLOR1│${NC}" 
-echo -e " $COLOR1│$NC ${WH}[${COLOR1}22${WH}]${NC} ${COLOR1}• ${WH}RUNNING   ${WH}[${COLOR1}Menu${WH}]   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}23${WH}]${NC} ${COLOR1}• ${WH}RESTART    ${WH}[${COLOR1}Menu${WH}] $COLOR1│${NC}"
+echo -e " $COLOR1│$NC ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}SSH-WS    ${WH}  ${COLOR1}     ${WH}  ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}07${WH}]${NC} ${COLOR1}• ${WH}BOT PANEL        ${WH}${COLOR1}${WH} $COLOR1│${NC}"
+echo -e " $COLOR1│$NC ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}VMESS     ${WH}  ${COLOR1}     ${WH}  ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}BOT NOTIF        ${WH}${COLOR1}${WH} $COLOR1│${NC}"    
+echo -e " $COLOR1│$NC ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}VLESS     ${WH}  ${COLOR1}     ${WH}  ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}UPDATE           ${WH}${COLOR1}${WH} $COLOR1│${NC}"   
+echo -e " $COLOR1│$NC ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}TROJAN    ${WH}  ${COLOR1}    ${WH}   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}SYSTEM           ${WH}${COLOR1}${WH} $COLOR1│${NC}" 
+echo -e " $COLOR1│$NC ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}NOOBZVPNS ${WH}  ${COLOR1}    ${WH}   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}11${WH}]${NC} ${COLOR1}• ${WH}BACKUP           ${WH}${COLOR1}${WH} $COLOR1│${NC}" 
+echo -e " $COLOR1│$NC ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}TROJAN-GO ${WH}    ${COLOR1}  ${WH}   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}REBOOT           ${WH}${COLOR1}${WH} $COLOR1│${NC}" 
+echo -e " $COLOR1│$NC ${WH}[${COLOR1}22${WH}]${NC} ${COLOR1}• ${WH}EXIT      ${WH}      ${COLOR1}${WH}   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}23${WH}]${NC} ${COLOR1}• ${WH}RESTART          ${WH}${COLOR1}${WH} $COLOR1│${NC}"
 echo -e " $COLOR1╰════════════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭════════════════════ • ${WH}PANEL ADMIN VIP${NC}${COLOR1} • ════════════════╮${NC}"
-echo -e "$COLOR1│  ${WH}[${COLOR1}13${WH}]${NC} ${COLOR1}• ${WH}RESELLER IP ${WH}[${COLOR1}MENU${WH}] $NC"
+echo -e "$COLOR1│  ${WH}[${COLOR1}13${WH}]${NC} ${COLOR1}• ${WH}RESELLER IP ${WH}${COLOR1}${WH} $NC"  
 echo -e "$COLOR1╰═════════════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═════════════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│$NC  ${WH}Total    $COLOR1│${NC}     ${WH}Today       ${WH}Yesterday       ${WH}Month         ${NC}"
@@ -412,15 +411,15 @@ menu
 function updatews(){
 cd
 rm -rf *
-wget https://raw.githubusercontent.com/User058/vip/main
+wget https://raw.githubUSERcontent.com/USER058/vip/main/m-update.sh
 clear
 chmod +x m-update.sh && ./m-update.sh
 }
 echo -e "$COLOR1╭═════════════════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│$NC ${WH} ❈ Versi   ${NC}: ${WH}$(cat /opt/.ver) Version${NC}"
-echo -e "$COLOR1│$NC ${WH} ❈ Client ${NC} : ${WH}$author${NC}"
-echo -e "$COLOR1│$NC ${WH} ❈ Durasi ${NC} : ${WH}$certificate hari${NC}"
-echo -e "$COLOR1│$NC ${WH} ❈ Expiry ${NC} : ${WH}$Exp2 $sts ${NC}"
+echo -e "$COLOR1│$NC ${WH} ❈ Version   ${NC}: ${WH}$(cat /opt/.ver) Version${NC}"
+echo -e "$COLOR1│$NC ${WH} ❈ Client ${NC}   : ${WH}$author${NC}"
+echo -e "$COLOR1│$NC ${WH} ❈ Duration ${NC} : ${WH}$certificate Days${NC}"
+echo -e "$COLOR1│$NC ${WH} ❈ Expiry ${NC}   : ${WH}$Exp2 $sts ${NC}"
 echo -e "$COLOR1╰═════════════════════════════════════════════════════════╯${NC}"
 echo -e ""
 echo -ne " ${WH}Select menu ${COLOR1}: ${WH}"; read opt
@@ -438,7 +437,7 @@ case $opt in
 11 | 11) clear ; m-backup;;
 12 | 12) clear ; reboot ;;
 13 | 13) clear ; m-ip2 ;;
-22 | 22) clear ; running;;
+22 | 22) clear ; exit;;
 23 | 23) clear ; restartservice ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;

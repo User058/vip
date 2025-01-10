@@ -29,72 +29,72 @@ case $colormenu in
 01 | 1)
 clear
 echo "red" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 02 | 2)
 clear
 echo "green" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 03 | 3)
 clear
 echo "yellow" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 04 | 4)
 clear
 echo "blue" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 05 | 5)
 clear
 echo "magenta" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 06 | 6)
 clear
 echo "cyan" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 07 | 7)
 clear
 echo "lightgray" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 08 | 8)
 clear
 echo "lightred" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 09 | 9)
 clear
 echo "lightgreen" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 10 | 10)
 clear
 echo "lightyellow" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 11 | 11)
 clear
 echo "lightblue" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 12 | 12)
 clear
 echo "lightmagenta" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 13 | 13)
 clear
 echo "lightcyan" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 14 | 14)
 clear
 echo "darkgray" >/etc/rmbl/theme/color.conf
-echo -e "SUCCES Ganti Tema"
+echo -e "Success Changing Theme"
 ;;
 00 | 0)
 clear
