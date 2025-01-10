@@ -319,7 +319,7 @@ echo -e " $COLOR1│$NC ${WH}[${COLOR1}01${WH}]${NC} ${COLOR1}• ${WH}SSH-WS   
 echo -e " $COLOR1│$NC ${WH}[${COLOR1}02${WH}]${NC} ${COLOR1}• ${WH}VMESS     ${WH}  ${COLOR1}     ${WH}  ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}08${WH}]${NC} ${COLOR1}• ${WH}BOT NOTIF        ${WH}${COLOR1}${WH} $COLOR1│${NC}"    
 echo -e " $COLOR1│$NC ${WH}[${COLOR1}03${WH}]${NC} ${COLOR1}• ${WH}VLESS     ${WH}  ${COLOR1}     ${WH}  ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}09${WH}]${NC} ${COLOR1}• ${WH}UPDATE           ${WH}${COLOR1}${WH} $COLOR1│${NC}"   
 echo -e " $COLOR1│$NC ${WH}[${COLOR1}04${WH}]${NC} ${COLOR1}• ${WH}TROJAN    ${WH}  ${COLOR1}    ${WH}   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}10${WH}]${NC} ${COLOR1}• ${WH}SYSTEM           ${WH}${COLOR1}${WH} $COLOR1│${NC}" 
-echo -e " $COLOR1│$NC ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}NOOBZVPNS ${WH}  ${COLOR1}    ${WH}   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}11${WH}]${NC} ${COLOR1}• ${WH}BACKUP           ${WH}${COLOR1}${WH} $COLOR1│${NC}" 
+echo -e " $COLOR1│$NC ${WH}[${COLOR1}05${WH}]${NC} ${COLOR1}• ${WH}NOOBZVPNS ${WH}  ${COLOR1}    ${WH}   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}11${WH}]${NC} ${COLOR1}• ${WH}BACKUP/RESTORE   ${WH}${COLOR1}${WH} $COLOR1│${NC}" 
 echo -e " $COLOR1│$NC ${WH}[${COLOR1}06${WH}]${NC} ${COLOR1}• ${WH}TROJAN-GO ${WH}    ${COLOR1}  ${WH}   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}12${WH}]${NC} ${COLOR1}• ${WH}REBOOT           ${WH}${COLOR1}${WH} $COLOR1│${NC}" 
 echo -e " $COLOR1│$NC ${WH}[${COLOR1}22${WH}]${NC} ${COLOR1}• ${WH}EXIT      ${WH}      ${COLOR1}${WH}   ${NC} $COLOR1│${NC}  ${WH}[${COLOR1}23${WH}]${NC} ${COLOR1}• ${WH}RESTART          ${WH}${COLOR1}${WH} $COLOR1│${NC}"
 echo -e " $COLOR1╰════════════════════════════════════════════════════════╯${NC}"
