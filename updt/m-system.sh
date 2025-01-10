@@ -1003,6 +1003,5 @@ case $opt in
 16 |16) clear ; nameauthor ; exit ;;
 17 |17) clear ; enabletorrent ; exit ;;
 99 |99) clear ; clearcache ; exit ;;
-00 |0) clear ; menu ; exit ;;
 *) echo -e "" ; echo "Please Select An Option " ; sleep 1 ; m-system ;;
 esac
