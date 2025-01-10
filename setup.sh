@@ -121,9 +121,9 @@ done
 if [[ $domain == "1" ]]; then
 clear
 echo -e  "${BIBlue}╭══════════════════════════════════════════╮${NC}"
-echo -e  "${BIBlue}│              \033[1;37mTHANK YOU \033[1;37mTHANK YOU \033[1;37mTHANK YOU                ${BIBlue}│${NC}"
-echo -e  "${BIBlue}│         \033[1;37mFOR USING MY SCRIPT \033[1;37mFOR USING MY SCRIPT \033[1;37mFOR USING MY SCRIPT         ${BIBlue}│${NC}"
-echo -e  "${BIBlue}│                \033[1;37m USER058 033[1;37m USER058 033[1;37m USER058                 ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│              \033[1;37mTHANK YOU \033[1;37mTHANK YOU                ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│         \033[1;37mFOR USING MY SCRIPT \033[1;37mFOR USING MY SCRIPT ${BIBlue}│${NC}"
+echo -e  "${BIBlue}│                \033[1;37m USER058 033[1;37m USER058                 ${BIBlue}│${NC}"
 echo -e  "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 echo " "
 until [[ $dnss =~ ^[a-zA-Z0-9_.-]+$ ]]; do 
