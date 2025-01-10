@@ -136,7 +136,7 @@ plus2=$(cat /etc/limit/vmess/${vmUSER})
 if [[ -z ${plus2} ]]; then
 echo "1" > /etc/limit/vmess/${vmUSER}
 fi
-plus3=$(( ${downlink} + ${plus2} ))
+plus3=$(( ${downlink} ${plus2} ))
 echo "${plus3}" > /etc/limit/vmess/${vmUSER}
 xray api stats --server=127.0.0.1:10085 -name "USER>>>${vmUSER}>>>traffic>>>downlink" -reset > /dev/null 2>&1
 fi
