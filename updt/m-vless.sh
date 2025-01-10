@@ -793,7 +793,7 @@ else
 echo "$(((bytes + 1073741823) / 1073741824)) GB"
 fi
 }
-function con() {
+function cek-vless() {
     local -i bytes=$1;
     if [[ $bytes -lt 1024 ]]; then
         echo "${bytes}B"
