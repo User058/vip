@@ -527,46 +527,6 @@ sts="${Info}"
 else
 sts="${Error}"
 fi
-
-function enabletorrent() {
-[[ ! -f /etc/ontorrent ]] && {
-sudo iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
-sudo iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
-sudo iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "BitTorrent" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "peer_id=" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string ".torrent" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "torrent" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "announce" -j DROP
-sudo iptables -A FORWARD -m string --algo bm --string "info_hash" -j DROP
-sudo iptables-save > /etc/iptables.up.rules
-sudo iptables-restore -t < /etc/iptables.up.rules
-sudo netfilter-persistent save >/dev/null 2>&1  
-sudo netfilter-persistent reload >/dev/null 2>&1 
-touch /etc/ontorrent
-menu-set
-} || {
-sudo iptables -D FORWARD -m string --string "get_peers" --algo bm -j DROP
-sudo iptables -D FORWARD -m string --string "announce_peer" --algo bm -j DROP
-sudo iptables -D FORWARD -m string --string "find_node" --algo bm -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "BitTorrent" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "peer_id=" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string ".torrent" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "torrent" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "announce" -j DROP
-sudo iptables -D FORWARD -m string --algo bm --string "info_hash" -j DROP
-sudo iptables-save > /etc/iptables.up.rules
-sudo iptables-restore -t < /etc/iptables.up.rules
-sudo netfilter-persistent save >/dev/null 2>&1
-sudo netfilter-persistent reload >/dev/null 2>&1 
-rm -f /etc/ontorrent
-menu-set
-}
-}
 clear
 echo -e "=================================="
 echo -e "    Limit Bandwidth Speed $sts    "
@@ -966,6 +926,44 @@ read -rp "Input Your New Name : " -e name
 echo "$name" > /etc/profil
 read -n 1 -s -r -p " Success Change Press Any key to Back Menu"
 menu
+}
+function enabletorrent() {
+[[ ! -f /etc/ontorrent ]] && {
+sudo iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
+sudo iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
+sudo iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
+sudo iptables -A FORWARD -m string --algo bm --string "BitTorrent" -j DROP
+sudo iptables -A FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
+sudo iptables -A FORWARD -m string --algo bm --string "peer_id=" -j DROP
+sudo iptables -A FORWARD -m string --algo bm --string ".torrent" -j DROP
+sudo iptables -A FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
+sudo iptables -A FORWARD -m string --algo bm --string "torrent" -j DROP
+sudo iptables -A FORWARD -m string --algo bm --string "announce" -j DROP
+sudo iptables -A FORWARD -m string --algo bm --string "info_hash" -j DROP
+sudo iptables-save > /etc/iptables.up.rules
+sudo iptables-restore -t < /etc/iptables.up.rules
+sudo netfilter-persistent save >/dev/null 2>&1  
+sudo netfilter-persistent reload >/dev/null 2>&1 
+touch /etc/ontorrent
+menu-set
+} || {
+sudo iptables -D FORWARD -m string --string "get_peers" --algo bm -j DROP
+sudo iptables -D FORWARD -m string --string "announce_peer" --algo bm -j DROP
+sudo iptables -D FORWARD -m string --string "find_node" --algo bm -j DROP
+sudo iptables -D FORWARD -m string --algo bm --string "BitTorrent" -j DROP
+sudo iptables -D FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
+sudo iptables -D FORWARD -m string --algo bm --string "peer_id=" -j DROP
+sudo iptables -D FORWARD -m string --algo bm --string ".torrent" -j DROP
+sudo iptables -D FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
+sudo iptables -D FORWARD -m string --algo bm --string "torrent" -j DROP
+sudo iptables -D FORWARD -m string --algo bm --string "announce" -j DROP
+sudo iptables -D FORWARD -m string --algo bm --string "info_hash" -j DROP
+sudo iptables-save > /etc/iptables.up.rules
+sudo iptables-restore -t < /etc/iptables.up.rules
+sudo netfilter-persistent save >/dev/null 2>&1
+sudo netfilter-persistent reload >/dev/null 2>&1 
+rm -f /etc/ontorrent
+menu-set
 }
 clear
 echo -e " $COLOR1╔══════════════════════════════════════════════════════╗${NC}"
