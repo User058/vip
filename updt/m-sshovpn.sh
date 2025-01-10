@@ -553,7 +553,7 @@ echo -e "$COLOR1│${NC} ${COLBG1}             ${WH}• RENEW USERS •         
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│                                                 │"
-echo -e "$COLOR1│${WH} User Tidak Ada!                              $COLOR1   │"
+echo -e "$COLOR1│${WH} User Doesn't Exist                              $COLOR1   │"
 echo -e "$COLOR1│                                                 │"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 echo ""
@@ -565,7 +565,7 @@ echo -e "$COLOR1│${NC} ${COLBG1}             ${WH}• RENEW USERS •         
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│ ${WH}Silahkan Pilih User Yang Mau di Renew$COLOR1           │"
-echo -e "$COLOR1│ ${WH}ketik [0] kembali kemenu$COLOR1                        │"
+echo -e "$COLOR1│ ${WH}type [0] back to menu$COLOR1                        │"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 grep -E "^### " "/etc/xray/ssh" | cut -d ' ' -f 2-3 | nl -s ') '
 until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
@@ -654,7 +654,7 @@ echo -e "$COLOR1│${NC} ${COLBG1}             ${WH}• DELETE USERS •        
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│                                                 │"
-echo -e "$COLOR1│${WH} User Tidak Ada!                              $COLOR1   │"
+echo -e "$COLOR1│${WH} User Doesn't Exist                              $COLOR1   │"
 echo -e "$COLOR1│                                                 │"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 echo ""
@@ -665,8 +665,8 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1│${NC} ${COLBG1}             ${WH}• DELETE USERS •                   │${NC}$COLOR1$NC"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│ ${WH}Silahkan Pilih User Yang Mau Didelete     $COLOR1      │"
-echo -e "$COLOR1│ ${WH}ketik [0] kembali kemenu                     $COLOR1   │"
+echo -e "$COLOR1│ ${WH}Please select the user you want to delete     $COLOR1      │"
+echo -e "$COLOR1│ ${WH}type [0] back to menu                     $COLOR1   │"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 grep -E "^### " "/etc/xray/ssh" | cut -d ' ' -f 2-3 | nl -s ') '
 until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
@@ -730,7 +730,7 @@ echo -e "$COLOR1│${NC} ${COLBG1}             ${WH}• USER CONFIG •         
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│                                                 │"
-echo -e "$COLOR1│${WH} User Tidak Ada!                              $COLOR1   │"
+echo -e "$COLOR1│${WH} User Doesn't Exist                              $COLOR1   │"
 echo -e "$COLOR1│                                                 │"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 echo ""
@@ -741,8 +741,8 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1│${NC} ${COLBG1}             ${WH}• USER CONFIG •                    │${NC}$COLOR1$NC"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│ ${WH}Silahkan Pilih User Yang Mau Dicek     $COLOR1         │"
-echo -e "$COLOR1│ ${WH}ketik [0] kembali kemenu                     $COLOR1   │"
+echo -e "$COLOR1│ ${WH}Please select the user you want to check $COLOR1         │"
+echo -e "$COLOR1│ ${WH}type [0] back to menu                     $COLOR1   │"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
 grep -E "^### " "/etc/xray/ssh" | cut -d ' ' -f 2-3 | nl -s ') '
 until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
@@ -931,7 +931,7 @@ echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$COLOR1 ${NC}${COLBG1}    ${WH}⇱ Limit SSH Account ⇲        ${NC} $COLOR1 $NC"
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo "Select the existing client you want to change ip"
-echo " ketik [0] kembali kemenu"
+echo " type [0] back to menu"
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 grep -E "^### " "/etc/xray/ssh" | cut -d ' ' -f 2-3 | nl -s ') '
 until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
@@ -1013,8 +1013,8 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1│${NC} ${COLBG1}          ${WH}• SETTING MULTI LOGIN •            ${NC} $COLOR1│ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═══════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│$NC Succes Ganti Auto Lock  ${NC}"
-echo -e "$COLOR1│$NC Jika User Melanggar auto lock Account. ${NC}"
+echo -e "$COLOR1│$NC Succes Auto Lock  ${NC}"
+echo -e "$COLOR1│$NC If the user violates then auto lock account. ${NC}"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 sleep 1
 elif [[ $lock == "2" ]]; then
@@ -1024,8 +1024,8 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1│${NC} ${COLBG1}          ${WH}• SETTING MULTI LOGIN •            ${NC} $COLOR1│ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═══════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│$NC Succes Ganti Auto Delete Accounr ${NC}"
-echo -e "$COLOR1│$NC Jika User Melanggar auto Delete Account. ${NC}"
+echo -e "$COLOR1│$NC Auto setting Delete Account ${NC}"
+echo -e "$COLOR1│$NC If the User Violates, Auto Delete Account. ${NC}"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 sleep 1
 fi
@@ -1036,8 +1036,8 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1│${NC} ${COLBG1}          ${WH}• SETTING MULTI LOGIN •            ${NC} $COLOR1│ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═══════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│$NC SILAHKAN TULIS JUMLAH WAKTU UNTUK LOCKED  ${NC}"
-echo -e "$COLOR1│$NC BISA TULIS 15 MENIT DLL. ${NC}"
+echo -e "$COLOR1│$NC PLEASE WRITE THE AMOUNT OF TIME TO BE       ${NC}"
+echo -e "$COLOR1│$NCLOCKED YOU CAN WRITE 15 MINUTES ETC.. ${NC}"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 read -rp "   Jumlah Waktu Lock: " -e notif2
 echo "${notif2}" > /etc/waktulockssh
@@ -1046,10 +1046,10 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1│${NC} ${COLBG1}          ${WH}• SETTING MULTI LOGIN •            ${NC} $COLOR1│ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═══════════════════════════════════════════════╮${NC}"
-echo -e "${COLOR1}│ $NC SILAHKAN TULIS JUMLAH NOTIFIKASI UNTUK AUTO LOCK    ${NC}"
-echo -e "${COLOR1}│ $NC AKUN USER YANG MULTI LOGIN     ${NC}"
+echo -e "${COLOR1}│ $NC PLEASE WRITE THE NUMBER OF NOTIFICATIONS TO     ${NC}"
+echo -e "${COLOR1}│ $NC AUTO LOCK MULTI LOGIN USER ACCOUNTS     ${NC}"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
-read -rp "   Jika Mau 3x Notif baru kelock tulis 3, dst: " -e notif
+read -rp "   If you want 3x Notifications then lock, write 3, etc: " -e notif
 cd /etc/xray/sshx
 echo "$notif" > notif
 clear
@@ -1057,16 +1057,16 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1│${NC} ${COLBG1}          ${WH}• SETTING MULTI LOGIN •            ${NC} $COLOR1│ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═══════════════════════════════════════════════╮${NC}"
-echo -e "${COLOR1}│ $NC SUCCES GANTI NOTIF LOCK JADI $notif $NC "
-echo -e "${COLOR1}│ $NC SUCCES GANTI TIME NOTIF LOCK JADI $notif2 MENIT $NC "
+echo -e "${COLOR1}│ $NC SUCCESS CHANGING THE LOCK NOTIFICATION $notif $NC "
+echo -e "${COLOR1}│ $NC SUCCESS CHANGING THE NOTIF LOCK TIME  $notif2 MENIT $NC "
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 else
 echo -e "$COLOR1╭═══════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}          ${WH}• SETTING MULTI LOGIN •            ${NC} $COLOR1│ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═══════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│$NC SILAHKAN TULIS JUMLAH WAKTU UNTUK UNTUK SCAN ${NC}"
-echo -e "$COLOR1│$NC USER YANG SEDANG MULTI LOGIN . ${NC}"
+echo -e "$COLOR1│$NC PLEASE WRITE THE AMOUNT OF TIME TO SCAN ${NC}"
+echo -e "$COLOR1│$NC USERS WHO DO MULTI LOGIN . ${NC}"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 read -rp "   Tulis Waktu Scan (Menit) : " -e notif2
 echo "# Autokill" >/etc/cron.d/tendang
@@ -1078,10 +1078,10 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1│${NC} ${COLBG1}          ${WH}• SETTING MULTI LOGIN •            ${NC} $COLOR1│ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═══════════════════════════════════════════════╮${NC}"
-echo -e "${COLOR1}│ $NC SILAHKAN TULIS JUMLAH NOTIFIKASI UNTUK AUTO LOCK    ${NC}"
-echo -e "${COLOR1}│ $NC AKUN USER YANG MULTI LOGIN     ${NC}"
+echo -e "${COLOR1}│ $NC ENTER THE NUMBER OF NOTIFICATIONS FOR AUTO LOCK    ${NC}"
+echo -e "${COLOR1}│ $NC MULTI LOGIN USER ACCOUNTS     ${NC}"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
-read -rp "   Jika Mau 3x Notif baru kelock tulis 3, dst: " -e notif
+read -rp "   If you want 3x Notifications then lock, write 3, etc: " -e notif
 cd /etc/xray/sshx
 echo "$notif" > notif
 clear
@@ -1089,8 +1089,8 @@ echo -e "$COLOR1╭════════════════════�
 echo -e "$COLOR1│${NC} ${COLBG1}          ${WH}• SETTING MULTI LOGIN •            ${NC} $COLOR1│ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯{NC}"
 echo -e "$COLOR1╭═══════════════════════════════════════════════╮${NC}"
-echo -e "${COLOR1}│ $NC SUCCES GANTI NOTIF LOCK JADI $notif $NC "
-echo -e "${COLOR1}│ $NC SUCCES GANTI TIME NOTIF LOCK JADI $notif2 MENIT $NC "
+echo -e "${COLOR1}│ $NC SUCCESS CHANGING THE LOCK NOTIFICATION $notif $NC "
+echo -e "${COLOR1}│ $NC SUCCESS CHANGING THE NOTIF LOCK TIME $notif2 MENIT $NC "
 echo -e "$COLOR1╰═══════════════════════════════════════════════╯${NC}"
 fi
 read -n 1 -s -r -p "Press any key to back on menu"
@@ -1119,8 +1119,8 @@ echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$COLOR1 ${NC}${COLBG1}    ${WH}⇱ Unlock SSH Account ⇲       ${NC} $COLOR1 $NC"
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo " Select the existing client you want to Unlock"
-echo " ketik [0] kembali kemenu"
-echo " tulis clear untuk delete semua Akun"
+echo " type [0] Back To Main Menu"
+echo " write clear to delete all accounts"
 echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo "     No  User      Expired"
 grep -E "^### " "/etc/xray/sshx/listlock" | cut -d ' ' -f 2-3 | nl -s ') '
